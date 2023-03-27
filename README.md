@@ -1,2 +1,1 @@
 # projekt
-Smrdi ti pero
