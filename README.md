@@ -6,6 +6,7 @@
   - 22.6. 2023 uzavření projektu
 
 # Harmonogram
+  Více info v project
  - do 9.4. udělat základní strukturu
  - do 30.4. funkčnost zadání
  - do 10.5. vzhled a dolazení
