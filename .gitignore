@@ -24,3 +24,6 @@ yarn-error.log*
 
 # pictures
 *.png
+
+# journal
+Deník.txt
