@@ -1,3 +1,3 @@
 30.3. - Založen repozitář na githubu, vytvořen harmonogram.
 1.- 2.4. - Dovysvětlení JSX pomoci youtube (https://www.youtube.com/watch?v=xo1sW5HD7os), zkouška vytvoření vlastního React projektu.
-8.4. - Proběhla schůzka na discrodru, kde jsme se domluvili na struktuře webu a kdo na čem bude pracovát, a také, co všechno musíme mit hotove do 17.4. (projektový den). 
+8.4. - Proběhla schůzka na discrodru, kde jsme se domluvili na struktuře webu (viz. Read me) a kdo na čem bude pracovát, a také, co všechno musíme mit hotove do 17.4. (projektový den). 
