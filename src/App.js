@@ -20,12 +20,15 @@ function App() {
     </div>
     <div class="row">
       <AllSelect/>
-      <br></br>
+    </div>
+    <div class="row">
       <SemesterTracker />
-      <br></br>
+    </div>
+    <div class="row">
       <DateRangePicker />
-      <br></br>
-      <GroupCard />
+    </div>
+    <div class="row">
+    <GroupCard />
     </div>
    </div>
   );
