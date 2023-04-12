@@ -31,7 +31,8 @@ const GroupCard = () => {
     };
 
     return (
-    <>
+    <div className="container">
+        <h2>GroupCard-Table</h2>
         <table className="table table-hover table-stripped">
         <thead>
             <tr>
@@ -61,8 +62,8 @@ const GroupCard = () => {
             
             </tr>
         </tbody>
-    </table>
-    </>
+        </table>
+    </div>
     )
 };
 

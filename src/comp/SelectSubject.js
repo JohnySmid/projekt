@@ -15,7 +15,8 @@ const SelectSubject = () => {
     
     
       return (
-        <div>
+        <div className="container">
+          <h2>Předmět</h2>
           <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example"onChange={handleChange}> 
             <option disabled selected>Předmět</option> 
             {options.map((option) => (

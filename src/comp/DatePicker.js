@@ -16,30 +16,31 @@ const DateRangePicker = () => {
 
   return (
     <div className="container">
-      <div className="row">
-        <div className="col">
-          <DatePicker
-            selected={startDate}
-            onChange={handleStartDateChange}
-            startDate={startDate}
-            endDate={endDate}
-            selectsStart
-            placeholderText="Start Date"
-            className="form-control"
-          />
+        <h2>Date Picker</h2>
+        <div className="row">
+            <div className="col">
+                <DatePicker
+                    selected={startDate}
+                    onChange={handleStartDateChange}
+                    startDate={startDate}
+                    endDate={endDate}
+                    selectsStart
+                    placeholderText="Start Date"
+                    className="form-control"
+                />
+            </div>
+            <div className="col">
+                <DatePicker
+                    selected={endDate}
+                    onChange={handleEndDateChange}
+                    startDate={startDate}
+                    endDate={endDate}
+                    selectsEnd
+                    placeholderText="End Date"
+                    className="form-control"
+                />
+            </div>
         </div>
-        <div className="col">
-          <DatePicker
-            selected={endDate}
-            onChange={handleEndDateChange}
-            startDate={startDate}
-            endDate={endDate}
-            selectsEnd
-            placeholderText="End Date"
-            className="form-control"
-          />
-        </div>
-      </div>
     </div>
   );
 };

@@ -17,8 +17,8 @@ const SelectDate = () => {
 
 
   return (
-    <div>
-      <h3>Rok</h3>
+    <div className="container">
+      <h2>Rok</h2>
       <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" value={selectedOption} onChange={handleChange}>
       <option disabled selected>--Vyberte rok--</option> 
         {options.map((option) => (

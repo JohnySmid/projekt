@@ -15,7 +15,8 @@ const SelectTerm = () => {
     };
 
     return (
-        <div>
+        <div className="container">
+            <h2>Semestr</h2>
             <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" onChange={handleChange}> 
                     <option disabled selected>Období</option> 
                     {options.map((option) => (

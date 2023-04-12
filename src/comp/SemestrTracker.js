@@ -21,7 +21,7 @@ const SemesterTracker = () => {
     }
 
     return (
-        <div>
+        <div className="container">
             <h2>Semester Tracker</h2>
             <p>Current Semester: {currentSemester}</p>
             <p>Selected Date: {currentDate.toDateString()}</p>

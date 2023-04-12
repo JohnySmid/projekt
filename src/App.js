@@ -14,15 +14,19 @@ function App() {
     // do something with the updated date
   }
   return (
-   <div>
-    <h1>Events</h1>
-    <AllSelect/>
-    <br></br>
-    <SemesterTracker />
-    <br></br>
-    <DateRangePicker />
-    <br></br>
-    <GroupCard />
+   <div class="container">
+    <div class="row">
+      <h1>Events</h1>
+    </div>
+    <div class="row">
+      <AllSelect/>
+      <br></br>
+      <SemesterTracker />
+      <br></br>
+      <DateRangePicker />
+      <br></br>
+      <GroupCard />
+    </div>
    </div>
   );
 }
