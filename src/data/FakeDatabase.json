@@ -1,0 +1,123 @@
+{
+    "students": [
+      {
+        "id": 1,
+        "first_name": "John",
+        "surname": "Doe",
+        "email": "john.doe@example.com"
+      },
+      {
+        "id": 2,
+        "first_name": "Jane",
+        "surname": "Doe",
+        "email": "jane.doe@example.com"
+      },
+      {
+        "id": 3,
+        "first_name": "Bob",
+        "surname": "Smith",
+        "email": "bob.smith@example.com"
+      },
+      {
+        "id": 4,
+        "first_name": "Alice",
+        "surname": "Johnson",
+        "email": "alice.johnson@example.com"
+      },
+      {
+        "id": 5,
+        "first_name": "Emily",
+        "surname": "Taylor",
+        "email": "emily.taylor@example.com"
+      },
+      {
+        "id": 6,
+        "first_name": "Michael",
+        "surname": "Brown",
+        "email": "michael.brown@example.com"
+      },
+      {
+        "id": 7,
+        "first_name": "Sarah",
+        "surname": "Wilson",
+        "email": "sarah.wilson@example.com"
+      },
+      {
+        "id": 8,
+        "first_name": "David",
+        "surname": "Lee",
+        "email": "david.lee@example.com"
+      },
+      {
+        "id": 9,
+        "first_name": "Karen",
+        "surname": "Johnson",
+        "email": "karen.johnson@example.com"
+      },
+      {
+        "id": 10,
+        "first_name": "Richard",
+        "surname": "Jones",
+        "email": "richard.jones@example.com"
+      },
+      {
+        "id": 11,
+        "first_name": "Amanda",
+        "surname": "Miller",
+        "email": "amanda.miller@example.com"
+      },
+      {
+        "id": 12,
+        "first_name": "Daniel",
+        "surname": "Davis",
+        "email": "daniel.davis@example.com"
+      },
+      {
+        "id": 13,
+        "first_name": "Megan",
+        "surname": "Martin",
+        "email": "megan.martin@example.com"
+      },
+      {
+        "id": 14,
+        "first_name": "Joshua",
+        "surname": "Wilson",
+        "email": "joshua.wilson@example.com"
+      },
+      {
+        "id": 15,
+        "first_name": "Laura",
+        "surname": "Taylor",
+        "email": "laura.taylor@example.com"
+      },
+      {
+        "id": 16,
+        "first_name": "Kevin",
+        "surname": "Johnson",
+        "email": "kevin.johnson@example.com"
+      },
+      {
+        "id": 17,
+        "first_name": "Natalie",
+        "surname": "Smith",
+        "email": "natalie.smith@example.com"
+      },
+      {
+        "id": 18,
+        "first_name": "Steven",
+        "surname": "Brown",
+        "email": "steven.brown@example.com"
+      },
+      {
+        "id": 19,
+        "first_name": "Maria",
+        "surname": "Garcia",
+        "email": "maria.garcia@example.com"
+      },
+      {
+        "id": 20,
+        "first_name": "Adriana",
+        "surname": "Grande",
+        "email": "adriana.grande@example.com"
+      }]
+}
