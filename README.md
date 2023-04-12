@@ -1,3 +1,4 @@
+![alt text](https://github.com/JohnySmid/projekt/blob/main/zadani.png)
 ![alt text](https://github.com/JohnySmid/projekt/blob/main/hnusnejdiagram.png)
 # Termíny
   - 30.3. 2023 zveřejnění harmonogramu prací na projektu (z pohledu programátora), určení repository url
