@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 const SingleGroup = {
     studenti: [
         {'id': 1, name: "Lukáš", surname: "Špánik", email: "s@seznam.cz"},
@@ -7,7 +9,29 @@ const SingleGroup = {
 }
 
 const GroupCard = () => {
+    const [name, setName] = useState('');
+    const [surname, setSurname] = useState('');
+    const [email, setEmail] = useState('');
+  
+    const handleAddStudent = (event) => {
+        // prevence reloadu stranky, umozni nam submit
+      event.preventDefault();
+
+      const newStudent = {
+        id: SingleGroup.studenti.length + 1,
+        name,
+        surname,
+        email,
+      };
+  
+      SingleGroup.studenti.push(newStudent);
+      setName('');
+      setSurname('');
+      setEmail('');
+    };
+
     return (
+    <>
         <table className="table table-hover table-stripped">
         <thead>
             <tr>
@@ -28,8 +52,17 @@ const GroupCard = () => {
                 <td><button onClick={() => console.log(`student s ID ${student.id}`)}>Vypis</button></td>
             </tr>
         ))}
+            <tr>
+                <td>-</td>
+                <td><input type="text" value={name} onChange={(event) => setName(event.target.value)} /></td>
+                <td><input type="text" value={surname} onChange={(event) => setSurname(event.target.value)} /></td>
+                <td><input type="text" value={email} onChange={(event) => setEmail(event.target.value)} /></td>
+                <td><button onClick={handleAddStudent}>Add</button></td>
+            
+            </tr>
         </tbody>
     </table>
+    </>
     )
 };
 
