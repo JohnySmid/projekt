@@ -6,22 +6,31 @@ const SingleGroup = {
     ]
 }
 
-
-
 const GroupCard = () => {
     return (
-        <div className= "card">
-        <div className= "card-header">
-            Hlavicka
-        </div>
-        <div className= "card-body">
-            Telicko
-            <GroupTable students ={studenti}/>
-        </div>
-        <div className= "card-footer">
-            Paticka
-        </div>
-    </div>
+        <table className="table table-hover table-stripped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Jméno</th>
+                <th scope="col">Příjmení</th>
+                <th scope="col">Email</th>
+                <th scope="col">Nástroje</th>
+            </tr>
+        </thead>
+        <tbody>
+        {SingleGroup.studenti.map((student) => (
+            <tr key={student.id}>
+                <td>{student.id}</td>
+                <td>{student.name}</td>
+                <td>{student.surname}</td>
+                <td>{student.email}</td>
+                <td><button onClick={() => console.log(`student s ID ${student.id}`)}>Vypis</button></td>
+            </tr>
+        ))}
+        </tbody>
+    </table>
     )
 };
 
+export default GroupCard;
