@@ -7,15 +7,15 @@ const SemesterTracker = () => {
         newDate.setMonth(8);
         newDate.setFullYear(new Date().getFullYear());
     */
-    const [currentDate, setCurrentDate] = useState(new Date()); // pro debug: useState(newDate);
-    const currentMonth = currentDate.getMonth();
-    const [currentSemester, setCurrentSemester] = useState(GetCurrentSemester(currentMonth));
+    const [currentDate, setCurrentDate] = useState(new Date()); // pro debug: useState(newDate); | state variable for the current date
+    const currentMonth = currentDate.getMonth();                // get the current month from the date object
+    const [currentSemester, setCurrentSemester] = useState(GetCurrentSemester(currentMonth));       // state variable for the current semester
 
     function GetCurrentSemester(month) {
-        //indexy mesicu 
-        if (month >= 2 && month <= 7) {
+        // determine the current semester based on the month
+        if (month >= 2 && month <= 7) {     // od brezna do srpna
             return "letni";
-        } else {
+        } else {                            // od zari do unora
             return "zimni";
         }
     }
