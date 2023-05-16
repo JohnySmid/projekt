@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {TableRow} from './TableRow';
 
 const SingleGroup = {
     studenti: [
@@ -45,13 +46,7 @@ export const GroupCard = () => {
         </thead>
         <tbody>
         {SingleGroup.studenti.map((student) => (
-            <tr key={student.id}>
-                <td>{student.id}</td>
-                <td>{student.name}</td>
-                <td>{student.surname}</td>
-                <td>{student.email}</td>
-                <td><button onClick={() => console.log(`student s ID ${student.id}`)}>Vypis</button></td>
-            </tr>
+            <TableRow key={student.id} student={student} />
         ))}
             <tr>
                 <td>-</td>
