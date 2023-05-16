@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SemesterTracker = () => {
+export const SemesterTracker = () => {
     /* Pro debugovani, lze nastavit vlastni datum... */
     /*  const newDate = new Date();
         newDate.setDate(1);
@@ -28,5 +28,3 @@ const SemesterTracker = () => {
         </div>
     );
 };
-
-export default SemesterTracker;

@@ -8,7 +8,7 @@ const SingleGroup = {
     ]
 }
 
-const GroupCard = () => {
+export const GroupCard = () => {
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
     const [email, setEmail] = useState('');
@@ -66,5 +66,3 @@ const GroupCard = () => {
     </div>
     )
 };
-
-export default GroupCard;

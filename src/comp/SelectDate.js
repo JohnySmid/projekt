@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const SelectDate = () => {
+export const SelectDate = () => {
   
   const options = [
     {value: '2021/2022', text: '2021/2022'},
@@ -28,5 +28,3 @@ const SelectDate = () => {
     </div>
   );
 };
-
-export default SelectDate;

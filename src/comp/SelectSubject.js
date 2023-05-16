@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const SelectSubject = () => {
+export const SelectSubject = () => {
     const options = [
         {value: 'Matematika', text: 'Matematika'},
         {value: 'Informatika', text: 'Informatika'},
@@ -26,5 +26,3 @@ const SelectSubject = () => {
         </div>
       );
 };
-
-export default SelectSubject;

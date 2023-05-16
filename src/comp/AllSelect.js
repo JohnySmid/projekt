@@ -1,11 +1,11 @@
 
-import SelectDate from "./SelectDate";
-import SelectTerm from "./SelectTerm";
-import SelectSubject from "./SelectSubject";
+import {SelectDate} from "./SelectDate";
+import {SelectTerm} from "./SelectTerm";
+import {SelectSubject} from "./SelectSubject";
 
 
 
-const AllSelect = () => {
+export const AllSelect = () => {
 
     return (
         <div>
@@ -15,5 +15,3 @@ const AllSelect = () => {
         </div>
     )
 };
-
-export default AllSelect;

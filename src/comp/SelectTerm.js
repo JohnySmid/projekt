@@ -1,7 +1,7 @@
 
 import {useState} from "react";
 
-const SelectTerm = () => {
+export const SelectTerm = () => {
     const options = [
         {value: 'zima', text: 'zima'},
         {value: 'leto', text: 'leto'},
@@ -26,5 +26,3 @@ const SelectTerm = () => {
         </div>
     );
 };
-
-export default SelectTerm;
