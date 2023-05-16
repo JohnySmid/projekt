@@ -8,7 +8,7 @@ const SingleGroup = {
     ]
 }
 
-export const GroupCard = () => {
+export const GroupCard = ({title}) => {
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
     const [email, setEmail] = useState('');
@@ -32,7 +32,7 @@ export const GroupCard = () => {
 
     return (
     <div className="container">
-        <h2>GroupCard-Table</h2>
+        <h2>{title}</h2>
         <table className="table table-hover table-stripped">
         <thead>
             <tr>
