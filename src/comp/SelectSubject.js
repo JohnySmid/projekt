@@ -1,14 +1,8 @@
 import {useState} from "react";
 
-<<<<<<< HEAD
 export const SelectSubject = () => {
-    const options = [
-=======
-// define a functional component named SelectSubject
-const SelectSubject = () => {
-    // an array of options to be displayed in the select input
+    
     const options = [ 
->>>>>>> 53adaabd1bd255414f6acde47646afc3836f7037
         {value: 'Matematika', text: 'Matematika'},
         {value: 'Informatika', text: 'Informatika'},
     ];

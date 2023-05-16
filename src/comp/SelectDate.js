@@ -1,15 +1,8 @@
 import {useState} from "react";
 
-<<<<<<< HEAD
 export const SelectDate = () => {
   
-  const options = [
-=======
-// define a functional component named SelectDate
-const SelectDate = () => {
-  // an array of options to be displayed in the select input
   const options = [ 
->>>>>>> 53adaabd1bd255414f6acde47646afc3836f7037
     {value: '2021/2022', text: '2021/2022'},
     {value: '2022/2023', text: '2022/2023'},
   ];
