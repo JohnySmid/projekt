@@ -4,3 +4,4 @@
 12.4. - Udělali jsme základní funkční komponenty (select dropdown, date picker a Group card). Do projektového dne stihnout udělat fetch dat.
 15.4. - Dolaďování komponent.
 16.4. - Doplněné komentáře, připrava na projektový den.
+16.5. - Po měsíci slušný pokrok, komponent (SelectDate) nam ukáže tabulku a na základě vybraného roku urči název Group Cardy. Dále opravné chyby, které nám byly vytkly na projektovým dni. Přidán FrontPage. Zítra se doptat, jak přesně mají vypadat Group Cardy → do té doby se jsme stuckli
