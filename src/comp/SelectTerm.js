@@ -1,12 +1,8 @@
 import {useState} from "react";
 
-<<<<<<< HEAD
+
 export const SelectTerm = () => {
-=======
-// define a functional component named SelectTerm
-const SelectTerm = () => {
-    // an array of options to be displayed in the select input
->>>>>>> 53adaabd1bd255414f6acde47646afc3836f7037
+
     const options = [
         {value: 'zima', text: 'zima'},
         {value: 'leto', text: 'leto'},
