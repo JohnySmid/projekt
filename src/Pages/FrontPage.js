@@ -22,9 +22,6 @@ export const FrontPage = () => {
         <div className="row">
           <DateRangePicker />
         </div>
-        <div className="row">
-        <GroupCard />
-        </div>
        </div>
       );
 }
