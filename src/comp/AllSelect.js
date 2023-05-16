@@ -7,6 +7,7 @@ import {SelectSubject} from "./SelectSubject";
 
 export const AllSelect = () => {
 
+    // render the SelectDate, SelectTerm, and SelectSubject components within a div container
     return (
         <div>
             <SelectDate/>

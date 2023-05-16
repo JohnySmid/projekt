@@ -1,4 +1,6 @@
 30.3. - Založen repozitář na githubu, vytvořen harmonogram.
 1.- 2.4. - Dovysvětlení JSX pomoci youtube (https://www.youtube.com/watch?v=xo1sW5HD7os), zkouška vytvoření vlastního React projektu.
-8.4. - Proběhla schůzka na discrodru, kde jsme se domluvili na struktuře webu (viz. README) a kdo na čem bude pracovát, a také, co všechno musíme mit hotove do 17.4. (projektový den). 
-12.4. - Udělali jsme základní funkční komponenty (select dropdown, date picker a Group card). Do projektového dne stihnout udělat fetch dat. 
+8.4. - Proběhla schůzka na discordu, kde jsme se domluvili na struktuře webu (viz. README) a kdo na čem bude pracovát, a také, co všechno musíme mit hotove do 17.4. (projektový den). 
+12.4. - Udělali jsme základní funkční komponenty (select dropdown, date picker a Group card). Do projektového dne stihnout udělat fetch dat.
+15.4. - Dolaďování komponent.
+16.4. - Doplněné komentáře, připrava na projektový den.
