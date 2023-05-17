@@ -1,6 +1,5 @@
 import { AllSelect } from '../comp/AllSelect'
 import { SemesterTracker } from '../comp/SemestrTracker';
-import {GroupCard} from '../comp/GroupCard';
 import {DateRangePicker} from '../comp/DatePicker';
 
 
