@@ -1,6 +1,6 @@
 import { AllSelect } from '../comp/AllSelect'
 import { SemesterTracker } from '../comp/SemestrTracker';
-import {DateRangePicker} from '../comp/DatePicker';
+import { DateRangePicker } from '../comp/DatePicker';
 
 
 export const FrontPage = () => {
