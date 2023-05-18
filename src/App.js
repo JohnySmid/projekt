@@ -1,7 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { FrontPage } from './pages/FrontPage';
+import { FrontPage } from '../pages/FrontPage';
 
 
 function App() {
