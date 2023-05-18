@@ -37,7 +37,7 @@ export const SelectDate = () => {
       </select>
       {selectedGroup && (
         <GroupCard
-          title={selectedGroup}
+          title={selectedOption}
           description={`Description for ${selectedGroup}`}
         />
       )}
