@@ -2,11 +2,14 @@ import { AllSelect } from '../comp/AllSelect'
 import { SemesterTracker } from '../comp/SemestrTracker';
 import { DateRangePicker } from '../comp/DatePicker';
 
+import { useSelector } from 'react-redux';
+import  { EventsLoader } from '../actions/EventsActionsLoader';
+import { EventsTable } from '../comp/EventsTable';
+
 
 export const FrontPage = () => {
-    const handleDateChange = (name, date) => {
-        // do something with the updated date
-      }
+    const dddata = useSelector((state) => state.dddata);
+
       return (
        <div className="container">
         <div className="row">
@@ -21,6 +24,9 @@ export const FrontPage = () => {
         <div className="row">
           <DateRangePicker />
         </div>
+        <div></div><div></div><div></div>
+        < EventsLoader />
+          <div> < EventsTable events={dddata}/> </div>
        </div>
       );
 }

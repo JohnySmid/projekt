@@ -1,10 +1,10 @@
-import { authorizedFetch } from './authorizedFetch'
+import { AuthorizedFetch } from './AuthorizedFetch'
 
 /**
  * Funkce, ktera id namapuje na json predstavujici "velky" (podrobny) dotaz na server
  * @returns 
  */
-export const ProjectsQueryJSON = () => ({
+export const EventsQueryJSON = () => ({
     "query":
         `query {
             eventPage {
@@ -36,7 +36,7 @@ export const ProjectsQueryJSON = () => ({
  * Realizace dotazu na server. Vyuziva autorizedFetch (zapouzdreni)
  * @returns 
  */
-export const ProjectsQuery = () =>
-    authorizedFetch('/gql', {
-        body: JSON.stringify(ProjectsQueryJSON()),
+export const EventsQuery = () =>
+AuthorizedFetch('/gql', {
+        body: JSON.stringify(EventsQueryJSON()),
     })
