@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {TableRow} from './TableRow';
+import {EventsTableRow} from './EventsTableRow';
 
 export const EventsTable = ({events}) => {
     return (
@@ -10,7 +10,7 @@ export const EventsTable = ({events}) => {
                 </tr>
             </thead>
             <tbody>
-                {events.map((data) => <TableRow key={data.id} project={data}/>)}
+                {events.map((data) => <EventsTableRow key={data.id} data={data}/>)}
             </tbody>
         </table>
     )
