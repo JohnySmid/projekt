@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { EventsSlicer } from '../reducers/EventsSlicer';
 
 
-const EventsTableRow = ({data}) => {
+export const EventsTableRow = ({data}) => {
 
   //const [ editState, setEditState ] = useState(false)
   const dispatch = useDispatch()

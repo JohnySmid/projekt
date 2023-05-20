@@ -25,6 +25,7 @@ export const FrontPage = () => {
           <DateRangePicker />
         </div>
         <div></div><div></div><div></div>
+       
         < EventsLoader />
           <div> < EventsTable events={dddata}/> </div>
        </div>

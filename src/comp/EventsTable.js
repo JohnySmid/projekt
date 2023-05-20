@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {EventsTableRow} from './EventsTableRow';
 
 export const EventsTable = ({events}) => {
