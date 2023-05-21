@@ -1,6 +1,7 @@
 import {EventsTableRow} from './EventsTableRow';
 
 export const EventsTable = ({dates}) => {
+    
     return (
         <table className="table table-hover table-light">
             <thead>
