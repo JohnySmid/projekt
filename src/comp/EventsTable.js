@@ -5,7 +5,7 @@ export const EventsTable = ({dates}) => {
         <table className="table table-hover table-light">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="cola">#</th>
                 </tr>
             </thead>
             <tbody>
