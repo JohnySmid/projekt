@@ -5,3 +5,5 @@
 15.4. - Dolaďování komponent.
 16.4. - Doplněné komentáře, připrava na projektový den.
 16.5. - Po měsíci slušný pokrok, komponent (SelectDate) nam ukáže tabulku a na základě vybraného roku urči název Group Cardy. Dále opravné chyby, které nám byly vytkly na projektovým dni. Přidán FrontPage. Zítra se doptat, jak přesně mají vypadat Group Cardy → do té doby se jsme stuckli
+17.5. - Zjistili jsme, že jsmě to cele udělali blbě
+21.5. - Podařilo se nám vytahnout data ze serveru. Vytvořene 2 stavové komponenty. 1. nám úkaže uživatele, kteři se mají zučastnit zkoušky. 2. nám ukaže, zda učastnik pozvanku přilaj a zda je přitomen
