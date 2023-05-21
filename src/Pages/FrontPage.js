@@ -16,7 +16,7 @@ export const FrontPage = () => {
           <h1>Events</h1>
         </div>
         <div className="row">
-          <AllSelect />
+          {/* <AllSelect /> */}
         </div>
         <div className="row">
           <SemesterTracker />
