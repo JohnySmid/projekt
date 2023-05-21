@@ -2,6 +2,8 @@ import { EventsQuery } from '../queries/EventsQuery';
 import { loadData } from '../reducers/EventsSlicer';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { EventsTable } from '../comp/EventsTable';
+import { useEffect } from 'react';
 
 export const EventsLoader = () => {
   const dispatch = useDispatch();
@@ -22,6 +24,10 @@ export const EventsLoader = () => {
     }
   };
 
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
   return (
     <div>
       <button
@@ -32,34 +38,7 @@ export const EventsLoader = () => {
         {isDataLoaded ? 'Data Loaded' : 'Load Data'}
       </button>
 
-      {isDataLoaded && (
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-          {dates.map((data) => (
-            <tr key={data.id}>
-              <td>{data.enddate}</td>
-              <td>{data.name}</td>
-              <td>{data.lastchange}</td>
-              <td>
-                  {data.presences.map((presence) => (
-                    <tr key={presence.id}>
-                      <td>{presence.presenceType.name}</td>
-                      <td>{presence.invitationType.name}</td>
-                      <td>{presence.user.email}</td>
-                    </tr>
-                ))}
-      
-              </td>
-       </tr>
-))}
-          </tbody>
-        </table>
-      )}
+      {isDataLoaded && <EventsTable dates={dates} />}
     </div>
   );
 }
