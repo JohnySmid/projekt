@@ -3,7 +3,7 @@ import { loadData } from '../reducers/EventsSlicer';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { EventsTable } from '../comp/EventsTable';
-import { useEffect } from 'react';
+
 
 export const EventsLoader = () => {
   const dispatch = useDispatch();
