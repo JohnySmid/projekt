@@ -8,7 +8,7 @@ import { EventsTable } from '../comp/EventsTable';
 export const EventsLoader = () => {
   const dispatch = useDispatch();
   const [isDataLoaded, setIsDataLoaded] = useState(false);
-  const [dates, setDates] = useState([]);
+  const [dataa, setDates] = useState([]);
 
   const fetchData = async () => {
     try {
@@ -38,7 +38,7 @@ export const EventsLoader = () => {
         {isDataLoaded ? 'Data Loaded' : 'Load Data'}
       </button>
 
-      {isDataLoaded && <EventsTable dates={dates} />}
+      {isDataLoaded && <EventsTable dataa={dataa} />}
     </div>
   );
 }

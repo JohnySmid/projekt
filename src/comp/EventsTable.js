@@ -1,33 +1,37 @@
-import {EventsTableRow} from './EventsTableRow';
 
-export const EventsTable = ({dates}) => {
-    
+import { useState } from 'react';
+import { TableRow } from './TableRow';
+
+export const EventsTable = ({ dataa }) => {
+    const [selectedGroupId, setSelectedGroupId] = useState(null);
+  
+    const handleGroupSelection = (groupId) => {
+      setSelectedGroupId(groupId);
+    };
+  
     return (
         <table className="table table-hover table-light">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                </tr>
-            </thead>
-            <tbody>
-          {dates.map((data) => (
+        <thead>
+          {dataa.map((data) => (
             <tr key={data.id}>
-              <td>{data.enddate}</td>
-              <td>{data.name}</td>
-              <td>{data.lastchange}</td>
-              <td>
-                  {data.presences.map((presence) => (
-                    <tr key={presence.id}>
-                      <td>{presence.presenceType.name}</td>
-                      <td>{presence.invitationType.name}</td>
-                      <td>{presence.user.email}</td>
-                    </tr>
-                ))}
-              </td>
+              <th scope="col">{data.name}</th>
             </tr>
-            ))}
-          </tbody>
-        </table>
-    )
-}
-
+          ))}
+        </thead>
+        <tbody>
+          {dataa.map((data) => (
+            <tr key={data.id}>
+              {data.presences.map((presence) => (
+                <TableRow
+                  key={presence.id}
+                  presence={presence}
+                  handleGroupSelection={handleGroupSelection}
+                  selectedGroupId={selectedGroupId}
+                />
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  };

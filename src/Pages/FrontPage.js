@@ -12,22 +12,20 @@ export const FrontPage = () => {
 
       return (
        <div className="container">
-        <div className="row">
+        {/* <div className="row">
           <h1>Events</h1>
-        </div>
-        <div className="row">
+        </div> */}
+        {/* <div className="row"> */}
           {/* <AllSelect /> */}
-        </div>
-        <div className="row">
+        {/* </div> */}
+        {/* <div className="row">
           <SemesterTracker />
-        </div>
-        <div className="row">
+        </div> */}
+        {/* <div className="row">
           <DateRangePicker />
-        </div>
-        <div></div><div></div><div></div>
-       
+        </div> */}
+        {/* <div></div><div></div><div></div> */}
         < EventsLoader />
-        {/*<div> < EventsTable events={dddata}/> </div> */}
        </div>
       );
 }
