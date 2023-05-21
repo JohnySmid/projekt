@@ -27,7 +27,7 @@ export const FrontPage = () => {
         <div></div><div></div><div></div>
        
         < EventsLoader />
-          <div> < EventsTable events={dddata}/> </div>
+        {/*<div> < EventsTable events={dddata}/> </div> */}
        </div>
       );
 }
