@@ -1,3 +1,5 @@
+import { ButtonChange } from "./ButtonChange";
+
 
 export const PPTable = ({ presence }) => {
     
@@ -8,7 +10,15 @@ export const PPTable = ({ presence }) => {
         <tbody>
           <tr>
             <td>{presence.presenceType.name}</td>
+            <ButtonChange
+            children={'Zmena presence'}
+            presence = {presence.presenceType.name}
+            />
             <td>{presence.invitationType.name}</td>
+            <ButtonChange
+            children={'Zmena ucasti'}
+            presence = {presence.invitationType.name}
+            />
           </tr>
         </tbody>
       </table>
