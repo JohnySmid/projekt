@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import  { EventsLoader } from '../actions/EventsActionsLoader';
-import {  EventsUpdater } from '../actions/EventsMutationLoader';
+
 
 
 
@@ -10,7 +10,7 @@ export const FrontPage = () => {
       return (
        <div className="container">
         < EventsLoader />
-        < EventsUpdater/>
+       
 
        </div>
       );

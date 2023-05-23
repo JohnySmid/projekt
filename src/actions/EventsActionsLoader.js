@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { EventsTable } from '../comp/EventsTable';
 
 
+
 export const EventsLoader = () => {
   const dispatch = useDispatch();
   const [isDataLoaded, setIsDataLoaded] = useState(false);
