@@ -19,6 +19,7 @@ export const EventsTable = ({ dataa }) => {
             <tr key={data.id}>
               <th scope="col">{data.name}</th>
               <th><EventsTextBox/></th>
+              <th> < EventsUpdater eventID={data.id} eventLastChange={data.lastchange} eventName="test"/></th>
             </tr>
           ))}
         </thead>
@@ -37,7 +38,6 @@ export const EventsTable = ({ dataa }) => {
           ))}
         </tbody>
       </table>
-      < EventsUpdater eventID={dataa.id} eventLastChange={dataa.lastchange} eventName="test"/>
       </div>
     );
   };
