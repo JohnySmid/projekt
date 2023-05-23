@@ -1,13 +1,14 @@
 import { AuthorizedFetch } from './AuthorizedFetch';
 
 
-const EventsMutationJSON = (eventID, eventLastChange, eventName) => ({
+const EventsMutationJSON = (id, lastchange, name) => ({
     "query":
         `mutation {
             eventUpdate(event: {
-                id: "${eventID}",
-                lastchange: "${eventLastChange}",
-                name: "${eventName}"}) {
+                id: "${id}",
+                lastchange: "${lastchange}",
+                name: "${name}"})
+                {
                     id,
                     msg,
                     event {
@@ -23,5 +24,5 @@ const EventsMutationJSON = (eventID, eventLastChange, eventName) => ({
 
 export const EventsMutation = (props) => 
     AuthorizedFetch('/gql', {
-    body: JSON.stringify(EventsMutationJSON(props.eventID, props.eventLastChange, props.eventName))
+    body: JSON.stringify(EventsMutationJSON(props.event.id, props.event.lastchange, props.event.name))
   })
