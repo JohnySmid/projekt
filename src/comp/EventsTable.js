@@ -11,6 +11,12 @@ export const EventsTable = ({ dataa }) => {
       setSelectedGroupId(groupId);
     };
 
+    const event = {
+      id: "45b2df80-ae0f-11ed-9bd8-0242ac110002",
+      lastchange: "2023-05-22T07:41:27.417197",
+      name: "Test"
+    }
+
     return (
       <div>
         <table className="table table-hover table-light">
@@ -19,7 +25,7 @@ export const EventsTable = ({ dataa }) => {
             <tr key={data.id}>
               <th scope="col">{data.name}</th>
               <th><EventsTextBox/></th>
-              <th> < EventsUpdater eventID={data.id} eventLastChange={data.lastchange} eventName="test"/></th>
+              <th><EventsUpdater event={event}/></th>
             </tr>
           ))}
         </thead>
