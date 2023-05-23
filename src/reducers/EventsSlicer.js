@@ -18,9 +18,6 @@ export const EventsSlicer = createSlice({
         return state
        }, 
     
-       /*
-    Tady potřeba vysvětlit tu mapu pls :-)
-    */
     updateData: (state, action) => {
         const updateData = action.payload
         state = state.map(data => data.id === updateData.id ? {...data, ...updateData} : data)
