@@ -9,9 +9,7 @@ export const FrontPage = () => {
 
       return (
        <div className="container">
-        < EventsLoader />
-       
-
+        <EventsLoader />
        </div>
       );
 }
