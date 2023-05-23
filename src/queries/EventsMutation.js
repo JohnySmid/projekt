@@ -1,4 +1,4 @@
-import { AutorizedFetch} from './AutorizedFetch'
+import { AuthorizedFetch } from './AuthorizedFetch';
 
 
 const EventsMutationJSON = (eventID, eventLastChange, eventName) => ({
@@ -22,6 +22,6 @@ const EventsMutationJSON = (eventID, eventLastChange, eventName) => ({
 
 
 export const EventsMutation = (eventID, eventLastChange, eventName) => 
-  AutorizedFetch('/gql', {
+    AuthorizedFetch('/gql', {
     body: JSON.stringify(EventsMutationJSON(eventID, eventLastChange, eventName))
   })

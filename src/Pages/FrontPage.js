@@ -1,10 +1,7 @@
-import { AllSelect } from '../comp/AllSelect'
-import { SemesterTracker } from '../comp/SemestrTracker';
-import { DateRangePicker } from '../comp/DatePicker';
-
 import { useSelector } from 'react-redux';
 import  { EventsLoader } from '../actions/EventsActionsLoader';
-import { EventsTable } from '../comp/EventsTable';
+import {  EventsUpdater } from '../actions/EventsMutationLoader';
+
 
 
 export const FrontPage = () => {
@@ -12,20 +9,9 @@ export const FrontPage = () => {
 
       return (
        <div className="container">
-        {/* <div className="row">
-          <h1>Events</h1>
-        </div> */}
-        {/* <div className="row"> */}
-          {/* <AllSelect /> */}
-        {/* </div> */}
-        {/* <div className="row">
-          <SemesterTracker />
-        </div> */}
-        {/* <div className="row">
-          <DateRangePicker />
-        </div> */}
-        {/* <div></div><div></div><div></div> */}
         < EventsLoader />
+        < EventsUpdater/>
+
        </div>
       );
 }
