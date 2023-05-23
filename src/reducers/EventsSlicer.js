@@ -30,7 +30,7 @@ export const EventsSlicer = createSlice({
 })
 
 // Export the addProject action creator from the projectsSlice
-export const { loadData, addSurvey, updateSurveyName } = EventsSlicer.actions
+export const { loadData, addData, updateData } = EventsSlicer.actions
 
 // Export the projectsSlice reducer
 export default EventsSlicer.reducer
