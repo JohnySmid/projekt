@@ -43,7 +43,7 @@ export const ButtonChange = ({ children, presence }) => {
               key={idx}
               id={`radio-${idx}`}
               type="radio"
-              variant={idx % 2 ? 'outline-success' : 'outline-danger'}
+              variant={idx % 2 ? 'outline-danger' : 'outline-success'} 
               name="radio"
               value={radio.value}
               checked={radioValue === radio.value}
