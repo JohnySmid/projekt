@@ -21,7 +21,7 @@ const EventsMutationJSON = (eventID, eventLastChange, eventName) => ({
 });
 
 
-export const EventsMutation = (props) => 
+export const EventsMutation = (eventID, eventLastChange, eventName) => 
   AutorizedFetch('/gql', {
-    body: JSON.stringify(EventsMutationJSON(props.eventID, props.eventLastChange, props.eventName))
+    body: JSON.stringify(EventsMutationJSON(eventID, eventLastChange, eventName))
   })
