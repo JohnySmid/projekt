@@ -2,11 +2,7 @@ import Card from "react-bootstrap/Card";
 import { useSelector } from 'react-redux';
 import { EventsTable } from "./EventsTable";
 
-/**
- * A page component that renders the ProjectsTable and ShowAddProjectFormButton components.
- * 
- * @returns {JSX.Element} The JSX element that represents the ProjectsPage component.
- */
+
 
 export const EventsGroupCard = () => {
     // Extract the projects state from Redux store using the useSelector hook

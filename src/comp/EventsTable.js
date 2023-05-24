@@ -19,7 +19,7 @@ export const EventsTable = ({ dataa }) => {
             <tr key={data.id}>
               <th scope="col">{data.name}</th>
               <th><EventsTextBox/></th>
-              <th> < EventsUpdater eventID={data.id} eventLastChange={data.lastchange} eventName="test"/></th>
+              <th> < EventsUpdater eventID={data.id} eventLastChange={data.lastchange} eventName="Zkouška_test"/></th>
             </tr>
           ))}
         </thead>

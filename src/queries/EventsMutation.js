@@ -7,16 +7,14 @@ const EventsMutationJSON = (eventID, eventLastChange, eventName) => ({
             eventUpdate(event: {
                 id: "${eventID}",
                 lastchange: "${eventLastChange}",
-                name: "${eventName}"}) {
+                name: "${eventName}"}){
                     id,
                     msg,
-                    event {
+                    event{
                         id,
                         name,
-                        lastchange
-                    }
+                        lastchange}
                 }
-            }
         }`
 });
 
