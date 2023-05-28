@@ -1,7 +1,7 @@
 import { ButtonChange } from "./ButtonChange";
 
 
-export const PPTable = ({ presence }) => {
+export const EventsPPTable = ({ presence }) => {
     
     console.log(presence.user.email)
 
