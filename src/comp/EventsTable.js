@@ -21,16 +21,10 @@ export const EventsTable = ({ dataa }) => {
         <table key={data.id} className="table table-hover table-light">
           <thead>
             <tr>
-            <th>
-              <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example"onChange={ console.log(data.name)}> 
-                <option value={data.name}></option>
-              </select>
-            </th>
-              {/*<th scope="col">{data.name}</th>*/}
-              <th>
-              <br></br>
-                  <EventsAddModal />
-              </th>
+              {/* <th>
+                <br />
+                <EventsAddModal />
+              </th> */}
               <th>
                 <EventsUpdater
                   eventID={data.id}
@@ -44,7 +38,7 @@ export const EventsTable = ({ dataa }) => {
             {data.presences.map((presence) => (
               <EventTableRow
                 key={presence.id}
-                presence={presence}
+               presence={presence}
                 handleGroupSelection={handleGroupSelection}
                 isSelected={selectedGroupIds.includes(presence.user.email)}
               />
@@ -57,13 +51,15 @@ export const EventsTable = ({ dataa }) => {
 };
 
 const EventTableRow = ({ presence, handleGroupSelection, isSelected }) => (
+ 
   <tr key={presence.id}>
     <td>{presence.user.email}</td>
     <td>
-      <LogButton
+      {/* <LogButton
         onClick={() => handleGroupSelection(presence.user.email)}
         typeofclick={'Vypis'}
-      />
+      /> */}
+      <EventsAddModal />
     </td>
     <td>{isSelected && <EventsPPTable presence={presence} />}</td>
   </tr>
