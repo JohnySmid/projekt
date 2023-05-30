@@ -1,7 +1,7 @@
 import { LogButton } from './Button';
 import { EventsPPTable } from './EventsPPTable';
 import { useState } from 'react';
-import { EventsTextBox } from '../comp/EventsTextbox';
+import { EventsAddModal } from '../comp/EventsAddModal';
 import {  EventsUpdater } from '../actions/EventsMutationLoader';
 
 export const EventsTable = ({ dataa }) => {
@@ -28,7 +28,8 @@ export const EventsTable = ({ dataa }) => {
             </th>
               {/*<th scope="col">{data.name}</th>*/}
               <th>
-                <EventsTextBox />
+              <br></br>
+                  <EventsAddModal />
               </th>
               <th>
                 <EventsUpdater
