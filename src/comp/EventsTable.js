@@ -21,7 +21,12 @@ export const EventsTable = ({ dataa }) => {
         <table key={data.id} className="table table-hover table-light">
           <thead>
             <tr>
-              <th scope="col">{data.name}</th>
+            <th>
+              <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example"onChange={ console.log(data.name)}> 
+                <option>{data.name}</option>
+              </select>
+            </th>
+              {/*<th scope="col">{data.name}</th>*/}
               <th>
                 <EventsTextBox />
               </th>
