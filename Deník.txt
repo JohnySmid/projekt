@@ -10,3 +10,4 @@
 22. 5. - Zpracovávání mutations
 23. 5. - Zprovozněná mutace
 28. 5. - Úprava kódu, tlačítko "Výpis" na otevírá a zavírá EvetnsPPTable a lze otevřít zároveň vice EventsPPTable. 
+30. 5. - Po dlouhém utrpujicím dnu jsme zjistili že náš profesor poslal chybnou mutaci pro náš projekt, cely den v háji, vyčerpaní a znechuceni. Nakonec po dlouhém vychillovani jsme udělali select, který dle zadaného eventu ukáže uživatele
