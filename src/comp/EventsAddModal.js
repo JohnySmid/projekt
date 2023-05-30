@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import {Modal, Form, Button} from 'react-bootstrap';
 
@@ -19,6 +19,14 @@ export const EventsAddModal = () => {
   // Fetch events
   const dispatch = useDispatch();
   const [isDataLoaded, setIsDataLoaded] = useState(false);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    if (show && !isDataLoaded) {
+       fetchData();
+       setIsDataLoaded(true);
+    }
+  }, [show, isDataLoaded]);
 
   const fetchData = async () => {
     try {
@@ -27,6 +35,8 @@ export const EventsAddModal = () => {
       if(dispatch(loadData(data.data.eventTypePage)))
       {
         console.log("lock N' loaded");
+        setData(data.data.eventTypePage); 
+        setIsDataLoaded(true);
       }
     } catch (error) {
       console.error('Error fetching group names:', error);
@@ -39,9 +49,10 @@ export const EventsAddModal = () => {
         +
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose}>  
         <Modal.Header>
           <Modal.Title>Events</Modal.Title>
+          {/* <Button onClick={fetchData} disabled={isDataLoaded}>click</Button> */}
         </Modal.Header>
         <Modal.Body>
             <Form>
@@ -51,9 +62,11 @@ export const EventsAddModal = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" onChange={(props) => setEventTypeIDName((props).target.value)}>
                     <Form.Label>Event Type</Form.Label>
-                    <Form.Select>
-                        <option value="">Aaa</option>
+                    {data.map((e) => (
+                    <Form.Select key={e.id}>
+                        <option>{e.name}</option>
                     </Form.Select>
+                    ))}
                 </Form.Group>
         </Form>
         </Modal.Body>

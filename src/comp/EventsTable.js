@@ -23,7 +23,7 @@ export const EventsTable = ({ dataa }) => {
             <tr>
             <th>
               <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example"onChange={ console.log(data.name)}> 
-                <option>{data.name}</option>
+                <option value={data.name}></option>
               </select>
             </th>
               {/*<th scope="col">{data.name}</th>*/}
