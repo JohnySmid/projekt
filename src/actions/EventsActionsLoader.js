@@ -2,7 +2,6 @@ import { EventsQuery } from '../queries/EventsQuery';
 import { loadData } from '../reducers/EventsSlicer';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { EventsSelect } from '../comp/EventsSelect';
 
 
 
@@ -39,7 +38,7 @@ export const EventsLoader = () => {
         {isDataLoaded ? 'Data Loaded' : 'Load Data'}
       </button>
 
-      {isDataLoaded && <EventsSelect dataa={dataa} />}
+      {/* {isDataLoaded && <EventsSelect dataa={dataa} />} */}
     </div>
   );
 }
