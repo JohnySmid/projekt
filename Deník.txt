@@ -11,3 +11,7 @@
 23. 5. - Zprovozněná mutace
 28. 5. - Úprava kódu, tlačítko "Výpis" na otevírá a zavírá EvetnsPPTable a lze otevřít zároveň vice EventsPPTable. 
 30. 5. - Po dlouhém utrpujicím dnu jsme zjistili že náš profesor poslal chybnou mutaci pro náš projekt, cely den v háji, vyčerpaní a znechuceni. Nakonec po dlouhém vychillovani jsme udělali select, který dle zadaného eventu ukáže uživatele
+1. 6.  - Opravování component, narazil jsem na chybu v databázi, s tím nic asi neudělám no...
+4. 6.  - Udělání nové tabulky s selectorem
+6. 6.  - Uprava pro funčknost nového sliceru
+7. 6.  - Konečně zprovozněný slicer pro redux, napsání prosebného emailu na úpravu databáze 
