@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Modal, Button} from 'react-bootstrap';
+import {Modal, Button, Form} from 'react-bootstrap';
 import { Info } from 'react-bootstrap-icons';
 
 
@@ -22,12 +22,19 @@ export const UserPresenceModal = () => {
 
       <Modal show={show} onHide={handleClose}>  
         <Modal.Header>
-          <Modal.Title>Events</Modal.Title>
-          {/* <Button onClick={fetchData} disabled={isDataLoaded}>click</Button> */}
+          <Modal.Title>User</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <h2>siuu</h2>   
-        
+          <Form>
+                <Form.Label>Invatation</Form.Label>
+                <Form.Label>Presence</Form.Label>
+                <Form.Group>
+                    <Form.Select>
+                        <option>jj</option>
+                        <option>k</option>
+                    </Form.Select>
+                </Form.Group>
+          </Form> 
         </Modal.Body>
         <Modal.Footer>
           <Button className="btn btn-dark" onClick={handleClose}>
