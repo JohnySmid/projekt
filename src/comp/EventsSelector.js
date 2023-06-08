@@ -11,6 +11,7 @@ export const EventsSelector = () => {
         return (
             <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" defaultValue={"--Select Event--"} onChange={(e) => {dispatch(changeEvent(e.target.value))}}>
             <option disabled>--Select Event--</option>
+            <option>a</option>
                 {data.map((e) => (
                         <option key={e.id} value={e.id}>{e.name}</option>
                 ))};
