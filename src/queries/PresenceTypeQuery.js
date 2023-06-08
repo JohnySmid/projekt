@@ -4,7 +4,8 @@ import { AuthorizedFetch } from './AuthorizedFetch'
 export const PresenceTypeJSON = () => ({
     "query":
         `query{
-            presenceTypePage{
+            presenceTypePage
+            {
                 id, 
                 name
             }
