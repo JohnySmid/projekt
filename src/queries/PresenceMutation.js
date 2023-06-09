@@ -1,6 +1,6 @@
 import { AuthorizedFetch } from "./AuthorizedFetch";
 
-const PresenceMutationJSON = (presenceId, lastchange, presenceTypeId, invitationId) => ({
+const PresenceMutationJSON = (presenceId, lastchange, presenceTypeId, invitationTypeId) => ({
     "query":
         `mutation {
             presenceUpdate
@@ -9,7 +9,7 @@ const PresenceMutationJSON = (presenceId, lastchange, presenceTypeId, invitation
                 id: "${presenceId}", 
                 lastchange: "${lastchange}",  
                 presencetypeId: "${presenceTypeId}", 
-                invitationId: "${invitationId}"
+                invitationId: "${invitationTypeId}"
             }) 
             {
               id
@@ -22,12 +22,11 @@ const PresenceMutationJSON = (presenceId, lastchange, presenceTypeId, invitation
                 }
               }
             }
-          }
-        }`
+          }`
 });
 
 
 export const PresenceMutation = (props) => 
     AuthorizedFetch('/gql', {
-    body: JSON.stringify(PresenceMutationJSON(props.presenceId, props.lastchange, props.presenceTypeId, props.invitationId))
+    body: JSON.stringify(PresenceMutationJSON(props.presenceId, props.lastchange, props.presenceTypeId, props.invitationTypeId))
   })

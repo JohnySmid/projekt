@@ -29,7 +29,7 @@ const EventPresenceRow = ({presence}) => {
                 <td>{presence.user.email}</td>
                 <td>{presence.invitationType.name}</td>
                 <td>{presence.presenceType.name}</td>
-                <td><UserPresenceModal /></td>
+                <td><UserPresenceModal data={presence}/></td>
             </tr>
         );
 }

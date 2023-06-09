@@ -15,6 +15,7 @@ export const EventsQueryJSON = () => ({
               enddate
               presences {
                 id
+                lastchange
                 presenceType {
                   id
                   name
