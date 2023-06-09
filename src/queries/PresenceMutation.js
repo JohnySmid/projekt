@@ -26,7 +26,7 @@ const PresenceMutationJSON = (presenceId, lastchange, presenceTypeId, invitation
 });
 
 
-export const PresenceMutation = (props) => 
+export const PresenceMutation = (presenceId, lastchange, presenceTypeId, invitationTypeId) => 
     AuthorizedFetch('/gql', {
-    body: JSON.stringify(PresenceMutationJSON(props.presenceId, props.lastchange, props.presenceTypeId, props.invitationTypeId))
+    body: JSON.stringify(PresenceMutationJSON(presenceId, lastchange, presenceTypeId, invitationTypeId))
   })

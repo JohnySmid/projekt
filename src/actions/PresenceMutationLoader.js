@@ -5,9 +5,8 @@ import { updateData } from '../reducers/PresenceSlicer';
  * Asynchronous action creator that fetches projects.
  * @returns {Function} A function that accepts the 'dispatch' and 'getState' functions from Redux.
  */
-export const PresenceMutationLoader = (props) => (dispatch, getState) => {
-    console.log(props);
-    PresenceMutation(props)
+export const PresenceMutationLoader = (presenceId, lastchange, presenceTypeId, invitationTypeId) => (dispatch, getState) => {
+    PresenceMutation(presenceId, lastchange, presenceTypeId, invitationTypeId)
       .then(response => response.json())
       .then(json => {
         const msg = json.data?.presenceUpdate.msg
