@@ -28,6 +28,9 @@ export const EventsQueryJSON = () => ({
                   id
                   email
                 }
+                event {
+                  id
+                }
               }
             }
           }`,
