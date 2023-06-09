@@ -136,8 +136,6 @@ export const UserPresenceModal = ({data}) => {
           <Button className="btn btn-blue" onClick={() => {
             dispatch(PresenceMutationLoader(structurePresence.presenceId, structurePresence.lastchange, 
               structurePresence.presenceTypeId, structurePresence.invitationTypeId));
-               console.log("pred mutaci:", structurePresence.presenceId, structurePresence.lastchange, 
-                 structurePresence.presenceTypeId, structurePresence.invitationTypeId, structurePresence.invitationTypeId);
           }}>
             Push
           </Button>

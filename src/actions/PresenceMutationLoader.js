@@ -1,5 +1,5 @@
 import { PresenceMutation } from '../queries/PresenceMutation';
-import { updateData } from '../reducers/PresenceSlicer';
+import { updateData } from '../reducers/EventSlice';
 
 /**
  * Asynchronous action creator that fetches projects.
@@ -11,6 +11,7 @@ export const PresenceMutationLoader = (presenceId, lastchange, presenceTypeId, i
       .then(json => {
         const msg = json.data?.presenceUpdate.msg
         const updatedData = json.data?.presenceUpdate.presence
+        console.log("data ", updatedData);
         if (msg === 'ok') {
           dispatch(updateData(updatedData))
         } else {

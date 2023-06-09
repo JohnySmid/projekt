@@ -16,9 +16,18 @@ const PresenceMutationJSON = (presenceId, lastchange, presenceTypeId, invitation
               msg
               presence {
                       id
-                user {
-                  id
-                  email
+                      lastchange
+                      presenceType {
+                        id
+                        name
+                      }
+                      invitationType {
+                        id
+                        name
+                      }
+                      user {
+                        id
+                        email
                 }
               }
             }
