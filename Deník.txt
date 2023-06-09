@@ -15,3 +15,5 @@
 4. 6.  - Udělání nové tabulky s selectorem
 6. 6.  - Uprava pro funčknost nového sliceru
 7. 6.  - Konečně zprovozněný slicer pro redux, napsání prosebného emailu na úpravu databáze 
+8. 6.  - Funguje nám konečně databáze, opravování query dotazů a mutations, udělání usermodalu
+9. 6.  - Drobrá úprava tabulky, zprovoznění usermodalu, aby komunikoval s databází... Hotové 2 červené body ze 4
