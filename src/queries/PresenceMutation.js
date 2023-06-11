@@ -27,6 +27,8 @@ const PresenceMutationJSON = (presenceId, lastchange, presenceTypeId, invitation
                       }
                       user {
                         id
+                        name 
+                        surname
                         email
                       }
                       event {
