@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 const FirstPage = ({ goToSecondPage, event }) => {
   return (
-    <div>
+    <div className='container'>
         <Card>
           <Card.Title>Presence</Card.Title>
           <Card.Body>
@@ -25,9 +25,16 @@ const FirstPage = ({ goToSecondPage, event }) => {
 
 const SecondPage = ({goToFirstPage}) => {
   return (
-    <div>
-      <h1>Second Page</h1>
-      <Button className="btn btn-info" onClick={goToFirstPage}>Presence Page</Button>
+    <div className='container'>
+      <Card>
+          <Card.Title>Invatation</Card.Title>
+          <Card.Body>
+            <EventsSelector />
+          </Card.Body>
+          <Card.Footer>
+          <Button className="btn btn-info" onClick={goToFirstPage}>Presence Page</Button>
+          </Card.Footer>
+        </Card>
     </div>
   );
 };

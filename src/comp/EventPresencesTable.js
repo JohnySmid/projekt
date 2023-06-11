@@ -3,7 +3,7 @@ import { UserPresenceModal } from '../comp/UserPresenceModal';
 export const EventPresencesTable = ({ data }) => {
     return (
         <>
-        <table className="table table-hover table-light">
+        <table className="table table-hover table-light table-bordered">
             <thead className="table-dark">
                 <tr>
                     <th>Name</th>
