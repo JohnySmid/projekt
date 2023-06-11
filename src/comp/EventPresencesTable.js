@@ -1,13 +1,13 @@
 import { UserPresenceModal } from '../comp/UserPresenceModal';
 
 export const EventPresencesTable = ({ data }) => {
-
     return (
         <>
         <table className="table table-hover table-light">
             <thead className="table-dark">
                 <tr>
-                    <th>#</th>
+                    <th>Name</th>
+                    <th>Surname</th>
                     <th>Email</th>
                     <th>Invatation</th>
                     <th>Presence</th>
@@ -25,7 +25,8 @@ export const EventPresencesTable = ({ data }) => {
 const EventPresenceRow = ({presence}) => { 
     return (
             <tr>
-                <td>*</td>
+                <td>{presence.user.name}</td>
+                <td>{presence.user.surname}</td>
                 <td>{presence.user.email}</td>
                 <td>{presence.invitationType.name}</td>
                 <td>{presence.presenceType.name}</td>

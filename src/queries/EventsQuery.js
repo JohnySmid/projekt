@@ -26,6 +26,8 @@ export const EventsQueryJSON = () => ({
                 }
                 user {
                   id
+                  name 
+                  surname
                   email
                 }
                 event {
