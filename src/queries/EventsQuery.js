@@ -29,6 +29,13 @@ export const EventsQueryJSON = () => ({
                   name 
                   surname
                   email
+                  membership {
+                    id
+                    group{
+                      id
+                      name
+                    }
+                  }
                 }
                 event {
                   id
