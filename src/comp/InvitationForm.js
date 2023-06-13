@@ -28,9 +28,9 @@ export const InvitationForm = () => {
           onChange={(e) => setMessage(e.target.value)}
         />
       </Form.Group>
-
-      <Form.Group>
-        <Button variant="primary" type="submit">
+      <br/>
+      <Form.Group className="d-flex justify-content-start">
+        <Button variant="danger" type="submit">
           Send Invitation
         </Button>
       </Form.Group>
