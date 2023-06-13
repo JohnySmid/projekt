@@ -1,6 +1,8 @@
 import  { EventsLoader } from '../actions/EventsActionsLoader';
 import { EventPresencesTable } from '../comp/EventPresencesTable';
 import { EventsSelector } from '../comp/EventsSelector';
+import { InvitationForm } from '../comp/InvitationForm';
+
 import { useSelector } from 'react-redux';
 import Card from "react-bootstrap/Card";
 import { Button } from 'react-bootstrap';
@@ -29,7 +31,7 @@ const SecondPage = ({goToFirstPage}) => {
       <Card>
           <Card.Title>Invatation</Card.Title>
           <Card.Body>
-            <EventsSelector />
+            <InvitationForm/>
           </Card.Body>
           <Card.Footer>
           <Button className="btn btn-info" onClick={goToFirstPage}>Presence Page</Button>
