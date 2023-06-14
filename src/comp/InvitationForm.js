@@ -1,12 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { GroupsQuery } from '../queries/GroupsQuery';
+import { EventsSelector } from './EventsSelector';
 
-export const InvitationForm = () => {
+export const InvitationForm = ({data}) => {
 
-  
+  // dodělat PresenceImport a hardcode to, ze jejich invitation: "Pozvaný" a presence ""
 
   // redux
   const dispatch = useDispatch();
@@ -36,6 +37,8 @@ export const InvitationForm = () => {
 
   return (
     <Form>
+      <Form.Label>Events:</Form.Label>
+      <EventsSelector/>
       <div>
         <Form.Label>Groups:</Form.Label>
         <Form.Select >

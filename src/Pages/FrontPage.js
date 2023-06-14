@@ -39,13 +39,13 @@ const FirstPage = ({ goToSecondPage, goToThirdPage, event }) => {
   );
 };
 
-const SecondPage = ({goToFirstPage, goToThirdPage}) => {
+const SecondPage = ({goToFirstPage, goToThirdPage, event}) => {
   return (
     <div className='container'>
       <Card>
           <Card.Title>Invatation</Card.Title>
           <Card.Body>
-            <InvitationForm/>
+            <InvitationForm data={event}/>
           </Card.Body>
           <Card.Footer>
           <Button className="btn btn-info" onClick={goToFirstPage}>Presence Page</Button>
@@ -94,7 +94,7 @@ export const FrontPage = () => {
           <div className='container'>
             {
               currentPage === 'first' ? ( <FirstPage goToSecondPage={goToSecondPage} goToThirdPage={goToThirdPage} event={event} /> ) : 
-              currentPage === 'second' ? ( ( <SecondPage goToFirstPage= {goToFirstPage} goToThirdPage={goToThirdPage}/> ) ) : 
+              currentPage === 'second' ? ( ( <SecondPage goToFirstPage= {goToFirstPage} goToThirdPage={goToThirdPage} event={event}/> ) ) : 
               ( <ThirdPage goToFirstPage= {goToFirstPage} goToSecondPage={goToSecondPage} event={event}/> )
             }
           </div>
