@@ -17,3 +17,4 @@
 7. 6.  - Konečně zprovozněný slicer pro redux, napsání prosebného emailu na úpravu databáze 
 8. 6.  - Funguje nám konečně databáze, opravování query dotazů a mutations, udělání usermodalu
 9. 6.  - Drobrá úprava tabulky, zprovoznění usermodalu, aby komunikoval s databází... Hotové 2 červené body ze 4
+14. 6. - Přidání kolačového diagramu
