@@ -8,7 +8,9 @@ import Card from "react-bootstrap/Card";
 import { Button } from 'react-bootstrap';
 import { useState } from 'react';
 
-const FirstPage = ({ goToSecondPage, event }) => {
+import { MyPieChart } from '../comp/EventsPie';
+
+const FirstPage = ({ goToSecondPage, goToThirdPage, event }) => {
   return (
     <div className='container'>
         <Card>
@@ -19,13 +21,14 @@ const FirstPage = ({ goToSecondPage, event }) => {
           </Card.Body>
           <Card.Footer>
             <Button  className="btn btn-info" onClick={goToSecondPage}>Invatation Page</Button>
+            <Button  className="btn btn-info" onClick={goToThirdPage}>Statistics Page</Button>
           </Card.Footer>
         </Card>
     </div>
   );
 };
 
-const SecondPage = ({goToFirstPage}) => {
+const SecondPage = ({goToFirstPage, goToThirdPage}) => {
   return (
     <div className='container'>
       <Card>
@@ -35,6 +38,25 @@ const SecondPage = ({goToFirstPage}) => {
           </Card.Body>
           <Card.Footer>
           <Button className="btn btn-info" onClick={goToFirstPage}>Presence Page</Button>
+          <Button  className="btn btn-info" onClick={goToThirdPage}>Statistics Page</Button>
+          </Card.Footer>
+        </Card>
+    </div>
+  );
+};
+
+const ThirdPage = ({goToFirstPage, goToSecondPage, event}) => {
+  return (
+    <div className='container'>
+      <Card>
+          <Card.Title>Statistics</Card.Title>
+          <Card.Body>
+            <th>Přítomnost skupiny</th>
+            <MyPieChart data={event.presences}/>
+          </Card.Body>
+          <Card.Footer>
+          <Button className="btn btn-info" onClick={goToFirstPage}>Presence Page</Button>
+          <Button  className="btn btn-info" onClick={goToSecondPage}>Invatation Page</Button>
           </Card.Footer>
         </Card>
     </div>
@@ -49,6 +71,9 @@ export const FrontPage = () => {
     const goToFirstPage = () => {
       setCurrentPage('first');
     };
+    const goToThirdPage = () => {
+      setCurrentPage('third');
+    };
     
     const eventId = useSelector((state) => state.event);
     const events = useSelector((state) => state.events);
@@ -60,8 +85,9 @@ export const FrontPage = () => {
         return (
           <div className='container'>
             {
-              currentPage === 'first' ? ( <FirstPage goToSecondPage={goToSecondPage} event={event} /> ) : 
-              ( <SecondPage goToFirstPage= {goToFirstPage}/> )
+              currentPage === 'first' ? ( <FirstPage goToSecondPage={goToSecondPage} goToThirdPage={goToThirdPage} event={event} /> ) : 
+              currentPage === 'second' ? ( ( <SecondPage goToFirstPage= {goToFirstPage} goToThirdPage={goToThirdPage}/> ) ) : 
+              ( <ThirdPage goToFirstPage= {goToFirstPage} goToSecondPage={goToSecondPage} event={event}/> )
             }
           </div>
           
