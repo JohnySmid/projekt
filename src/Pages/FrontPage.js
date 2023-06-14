@@ -21,6 +21,17 @@ const FirstPage = ({ goToSecondPage, goToThirdPage, event }) => {
           </Card.Body>
           <Card.Footer>
             <Button  className="btn btn-info" onClick={goToSecondPage}>Invatation Page</Button>
+          </Card.Footer>
+        </Card>
+        <br />
+        <br />
+        <Card>
+          <Card.Title>Pie graph presence</Card.Title>
+          <Card.Body>
+            <th>Event presence</th>
+            <MyPieChart data={event.presences}/>
+          </Card.Body>
+          <Card.Footer>
             <Button  className="btn btn-info" onClick={goToThirdPage}>Statistics Page</Button>
           </Card.Footer>
         </Card>
@@ -38,7 +49,6 @@ const SecondPage = ({goToFirstPage, goToThirdPage}) => {
           </Card.Body>
           <Card.Footer>
           <Button className="btn btn-info" onClick={goToFirstPage}>Presence Page</Button>
-          <Button  className="btn btn-info" onClick={goToThirdPage}>Statistics Page</Button>
           </Card.Footer>
         </Card>
     </div>
@@ -51,12 +61,10 @@ const ThirdPage = ({goToFirstPage, goToSecondPage, event}) => {
       <Card>
           <Card.Title>Statistics</Card.Title>
           <Card.Body>
-            <th>Přítomnost skupiny</th>
-            <MyPieChart data={event.presences}/>
+
           </Card.Body>
           <Card.Footer>
           <Button className="btn btn-info" onClick={goToFirstPage}>Presence Page</Button>
-          <Button  className="btn btn-info" onClick={goToSecondPage}>Invatation Page</Button>
           </Card.Footer>
         </Card>
     </div>
