@@ -5,6 +5,9 @@ import { useDispatch } from 'react-redux';
 import { GroupsQuery } from '../queries/GroupsQuery';
 
 export const InvitationForm = () => {
+
+  
+
   // redux
   const dispatch = useDispatch();
   const [GroupTypeSetter, setGroupTypeSetter] = useState([]);
@@ -28,11 +31,14 @@ export const InvitationForm = () => {
     dispatch(groupTypeFetch());
   }, []);
 
+  console.log(GroupTypeSetter.id)
+  const [groupName, setgroupName] = useState(GroupTypeSetter);
+
   return (
     <Form>
       <div>
         <Form.Label>Groups:</Form.Label>
-        <Form.Select>
+        <Form.Select >
           {GroupTypeSetter.map((type) => {
             if (type.name) {
               return <option key={type.id} value={type.id}>{type.name}</option>;
