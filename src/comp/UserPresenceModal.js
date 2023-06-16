@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { PresenceType } from '../queries/PresenceTypeQuery';
 import { InvatationType } from '../queries/InvatationTypeQuery';
 import { PresenceMutationLoader } from '../actions/PresenceMutationLoader';
+import { PresenceButton } from './PresenceButton';
 
 
 
@@ -63,6 +64,13 @@ export const UserPresenceModal = ({data}) => {
     presenceTypeId: presenceType,
     invitationTypeId: invatationType
   }
+
+  const structurePresenceType = PresenceTypeSetter.map((type) => {
+    if (type.id) {
+      return { typeId: type.id, typeName: type.name };
+    }
+    return null;
+  });
 
 
 
@@ -125,7 +133,31 @@ export const UserPresenceModal = ({data}) => {
                     </Button>
                   </div>
               </Form.Group>
+              <br />
+              <br />
+              <Form.Group>
+                <Form.Label>Jeste nefunguje!!! Hazi msg: undefined</Form.Label>
+                <br />
+                      <PresenceButton btnname={structurePresenceType[0]?.typeName}
+                                      presenceId={structurePresence.presenceId} 
+                                      lastchange={structurePresence.lastchange}
+                                      presenceTypeId={structurePresenceType[0]?.typeId}                      
+                      />
+                      <PresenceButton btnname={structurePresenceType[1]?.typeName}
+                                      presenceId={structurePresence.presenceId} 
+                                      lastchange={structurePresence.lastchange}
+                                      presenceTypeId={structurePresenceType[1]?.typeId}                      
+                      />
+                      <PresenceButton btnname={structurePresenceType[2]?.typeName}
+                                      presenceId={structurePresence.presenceId} 
+                                      lastchange={structurePresence.lastchange}
+                                      presenceTypeId={structurePresenceType[2]?.typeId}                      
+                      />
+          
+              </Form.Group> 
           </Form>
+                     
+
         </Modal.Body>
         <Modal.Footer>
           <Button className="btn btn-dark" onClick={() => {

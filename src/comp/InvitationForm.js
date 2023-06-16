@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { GroupsQuery } from '../queries/GroupsQuery';
 import { EventsSelector } from './EventsSelector';
 
+
 export const InvitationForm = ({data}) => {
 
   // dodělat PresenceImport a hardcode to, ze jejich invitation: "Pozvaný" a presence ""

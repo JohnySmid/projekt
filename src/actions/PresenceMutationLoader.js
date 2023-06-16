@@ -10,6 +10,7 @@ export const PresenceMutationLoader = (presenceId, lastchange, presenceTypeId, i
       .then(response => response.json())
       .then(json => {
         const msg = json.data?.presenceUpdate.msg
+        console.log('msg', msg) // tady je chyba, undefined!!!
         const updatedData = json.data?.presenceUpdate.presence
         if (msg === 'ok') {
           dispatch(updateData(updatedData))
@@ -18,4 +19,7 @@ export const PresenceMutationLoader = (presenceId, lastchange, presenceTypeId, i
         }
         return json
       })
+      .catch(error => {
+        console.log('Error occurred in PresenceMutationLoader:', error);
+      });
   }
