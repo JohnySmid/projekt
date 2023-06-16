@@ -24,8 +24,26 @@ export const EventsLoader = () => {
     }
   };
 
+  // const fetchData = () => (dispatch, getState) => {
+  //   EventsQuery()
+  //     .then(response => response.json())
+  //     .then(json => {
+  //       const events = json.data?.eventPage;
+  //       if (events) {
+  //         dispatch(loadData(events));
+  //       } else {
+  //         console.log("Error occurred in fetchData function for fetching data from the database.");
+  //       }
+  //       setIsDataLoaded(true);
+  //       return json;
+  //     })
+  //     .catch(error => {
+  //       console.error("Error occurred in fetchData function:", error);
+  //     });
+  // };
+
   // useEffect(() => {
-  //   fetchData();
+  //   dispatch(fetchData());
   // }, []);
 
   return (
