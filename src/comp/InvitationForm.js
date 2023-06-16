@@ -65,9 +65,9 @@ export const InvitationForm = ({data, fulldata}) => {
   return (
     <Form>
     <div>
-      <Form.Label>Events:</Form.Label>
+      <Form.Label style={{ fontSize: '20px' }}>Event</Form.Label>
       <EventsSelector/>
-  
+      <br />
       <Form.Group>
         <Form.Label style={{ fontSize: '20px' }}>Invite specific user</Form.Label>
         <br />
