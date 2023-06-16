@@ -12,7 +12,17 @@ export const MyPieChart = ({ data }) => {
   
     // Prepare the data object for the pie chart
     const chartData = {
-      labels: Object.keys(presenceCounts),
+      labels: Object.keys(presenceCounts).map((presenceType) => {
+        if (presenceType === 'Přítomen') {
+          return 'Přítomen';
+        } else if (presenceType === 'Neomluven') {
+          return 'Neomluven';
+        } else if (presenceType === 'Dovolená') {
+          return 'Dovolená';
+        } else {
+          return 'Ostatní';
+        }
+      }),
       datasets: [
         {
           data: Object.values(presenceCounts),
@@ -21,8 +31,10 @@ export const MyPieChart = ({ data }) => {
               return '#1af203'; // Green
             } else if (presenceType === 'Neomluven') {
               return '#ff1748'; // Red
-            } else {
-              return '#e5f900'; // Yellow (for other types)
+            } else if (presenceType === 'Dovolená') {
+              return '#e5f900'; // Yellow
+            }else {
+              return '#eb8109'; // Orange (for other types)
             }
           }),
         },
