@@ -9,8 +9,9 @@ import { Button } from 'react-bootstrap';
 import { useState } from 'react';
 
 import { MyPieChart } from '../comp/EventsPie';
+import { UserPieChart } from '../comp/UserPie';
 
-const FirstPage = ({ goToSecondPage, goToThirdPage, event }) => {
+const FirstPage = ({ goToSecondPage, goToThirdPage, event, events }) => {
   return (
     <div className='container'>
         <Card>
@@ -30,6 +31,7 @@ const FirstPage = ({ goToSecondPage, goToThirdPage, event }) => {
           <Card.Body>
             <th>Event presence</th>
             <MyPieChart data={event.presences}/>
+            <UserPieChart userId="89d1f4e4-ae0f-11ed-9bd8-0242ac110002" data={event}/>
           </Card.Body>
           <Card.Footer>
             <Button  className="btn btn-info" onClick={goToThirdPage}>Statistics Page</Button>
@@ -87,6 +89,7 @@ export const FrontPage = () => {
     const events = useSelector((state) => state.events);
       
     const event = events.find((e) => e.id === eventId);
+
 
     if (event)
     {

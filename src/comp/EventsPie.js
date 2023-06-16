@@ -16,11 +16,19 @@ export const MyPieChart = ({ data }) => {
       datasets: [
         {
           data: Object.values(presenceCounts),
-          backgroundColor: ['#1af203', '#ff1748', '#e5f900'], // Green, Red, Yellow
-            hoverBackgroundColor: ['#1af203', '#ff1748', '#e5f900'],
+          backgroundColor: Object.keys(presenceCounts).map((presenceType) => {
+            if (presenceType === 'Přítomen') {
+              return '#1af203'; // Green
+            } else if (presenceType === 'Neomluven') {
+              return '#ff1748'; // Red
+            } else {
+              return '#e5f900'; // Yellow (for other types)
+            }
+          }),
         },
       ],
     };
+  
   
     return (
       <>
