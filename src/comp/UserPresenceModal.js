@@ -6,6 +6,8 @@ import { PresenceType } from '../queries/PresenceTypeQuery';
 import { InvatationType } from '../queries/InvatationTypeQuery';
 import { PresenceMutationLoader } from '../actions/PresenceMutationLoader';
 import { PresenceButton } from './PresenceButton';
+import { EventsSelector } from './EventsSelector';
+import { InviteUserButton } from './InviteUserButton';
 
 
 
@@ -104,12 +106,6 @@ export const UserPresenceModal = ({data}) => {
                         }
                       </Form.Select>
                     </div>
-                    <br />
-                    <div>
-                      <Button className="btn btn-success">
-                        Change invatation
-                      </Button>
-                    </div>
                 </Form.Group>
                 <br /> <br />
                 <Form.Group>
@@ -127,14 +123,8 @@ export const UserPresenceModal = ({data}) => {
                     </Form.Select>
                   </div>
                   <br />
-                  <div>
-                    <Button className="btn btn-warning">
-                      Change presence
-                    </Button>
-                  </div>
               </Form.Group>
-              <br />
-              <br />
+
               <Form.Group>
                 <Form.Label>Jeste nefunguje!!! Hazi msg: undefined</Form.Label>
                 <br />
@@ -156,6 +146,8 @@ export const UserPresenceModal = ({data}) => {
           
               </Form.Group> 
           </Form>
+          
+         
                      
 
         </Modal.Body>
