@@ -28,11 +28,19 @@ export const EventsSlicer = createSlice({
         state = current(state).map(event => event.id === newEvent.id ? newEvent  : event)
         return state
         },
+
+    addPresence: (state, action) => {
+        const updateData = action.payload
+        const event =  current(state).find(event => event.id === updateData.event.id)
+        const newEvent =  { ...event, presences: updateData.event.presences }
+        state = current(state).map(event => event.id === newEvent.id ? newEvent  : event)
+        return state
+        },
     },
 })
 
 // Export the addProject action creator from the projectsSlice
-export const { loadData, addData, updateData } = EventsSlicer.actions
+export const { loadData, addData, updateData, addPresence} = EventsSlicer.actions
 
 // Export the projectsSlice reducer
 export default EventsSlicer.reducer

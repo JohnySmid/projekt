@@ -4,7 +4,7 @@ import { PresenceMutationLoader } from '../actions/PresenceMutationLoader';
 import { useDispatch } from 'react-redux';
 
 
-export const PresenceButton = ({btnname, presenceId, lastchange, presenceTypeId}) => {
+export const PresenceButton = ({btnname, presenceId, lastchange, presenceTypeId, invitationTypeId}) => {
     const dispatch = useDispatch();
 
     // button colors :)
@@ -20,7 +20,7 @@ export const PresenceButton = ({btnname, presenceId, lastchange, presenceTypeId}
         return (
             <Button className={buttonClassName} onClick=
             {() => {
-                        dispatch(PresenceMutationLoader(presenceId, lastchange, presenceTypeId));
+                        dispatch(PresenceMutationLoader(presenceId, lastchange, presenceTypeId, invitationTypeId));
                     }
             }>{btnname}</Button>
         );

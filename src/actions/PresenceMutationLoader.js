@@ -9,6 +9,7 @@ export const PresenceMutationLoader = (presenceId, lastchange, presenceTypeId, i
     PresenceMutation(presenceId, lastchange, presenceTypeId, invitationTypeId)
       .then(response => response.json())
       .then(json => {
+        console.log('json: ', json)
         const msg = json.data?.presenceUpdate.msg
         console.log('msg', msg) // tady je chyba, undefined!!!
         const updatedData = json.data?.presenceUpdate.presence

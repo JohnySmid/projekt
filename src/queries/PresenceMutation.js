@@ -1,7 +1,7 @@
 import { AuthorizedFetch } from "./AuthorizedFetch";
 
 const PresenceMutationJSON = (presenceId, lastchange, presenceTypeId, invitationTypeId) => ({
-  query: `mutation($presenceId: ID!, $lastchange: String!, $presenceTypeId: ID!, $invitationTypeId: ID!) 
+  query: `mutation($presenceId: ID!, $lastchange: DateTime!, $presenceTypeId: ID!, $invitationTypeId: ID!) 
   {
     presenceUpdate(presence: {
       id: $presenceId,

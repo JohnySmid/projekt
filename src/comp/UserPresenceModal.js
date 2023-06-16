@@ -131,17 +131,20 @@ export const UserPresenceModal = ({data}) => {
                       <PresenceButton btnname={structurePresenceType[0]?.typeName}
                                       presenceId={structurePresence.presenceId} 
                                       lastchange={structurePresence.lastchange}
-                                      presenceTypeId={structurePresenceType[0]?.typeId}                      
+                                      presenceTypeId={structurePresenceType[0]?.typeId}
+                                      invitationTypeId={invatationType}                      
                       />
                       <PresenceButton btnname={structurePresenceType[1]?.typeName}
                                       presenceId={structurePresence.presenceId} 
                                       lastchange={structurePresence.lastchange}
-                                      presenceTypeId={structurePresenceType[1]?.typeId}                      
+                                      presenceTypeId={structurePresenceType[1]?.typeId}
+                                      invitationTypeId={invatationType}                      
                       />
                       <PresenceButton btnname={structurePresenceType[2]?.typeName}
                                       presenceId={structurePresence.presenceId} 
                                       lastchange={structurePresence.lastchange}
-                                      presenceTypeId={structurePresenceType[2]?.typeId}                      
+                                      presenceTypeId={structurePresenceType[2]?.typeId}
+                                      invitationTypeId={invatationType}                      
                       />
           
               </Form.Group> 
