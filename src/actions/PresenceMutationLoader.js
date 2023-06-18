@@ -11,7 +11,7 @@ export const PresenceMutationLoader = (presenceId, lastchange, presenceTypeId, i
       .then(json => {
         console.log('json: ', json)
         const msg = json.data?.presenceUpdate.msg
-        console.log('msg', msg) // tady je chyba, undefined!!!
+        // console.log('msg', msg) 
         const updatedData = json.data?.presenceUpdate.presence
         if (msg === 'ok') {
           dispatch(updateData(updatedData))
