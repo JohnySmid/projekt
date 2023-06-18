@@ -20,3 +20,4 @@
 14. 6. - Přidání kolačového diagramu + připrava na konzultaci (doladění komponent)
 15. 6. - vrácení do reality, zjištění, že jsme si přidělali navíc práci...
 16. 6. - Upravování podle návrhů pana profesora. (Celé to předělat)
+17.-18. 6. - Uprava eventsPie, který ukazuje přitomnost v daném časovém intervalu. Dále přidan userPie, který dle ID uživatele ukazuje absenci ve všech eventech. Už stači přidat membershipPie a je hotovo.

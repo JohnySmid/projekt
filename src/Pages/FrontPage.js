@@ -30,8 +30,9 @@ const FirstPage = ({ goToSecondPage, goToThirdPage, event, events }) => {
           <Card.Title>Pie graph presence</Card.Title>
           <Card.Body>
             <th>Event presence</th>
-            <MyPieChart data={event.presences}/>
-            <UserPieChart userId="89d1f4e4-ae0f-11ed-9bd8-0242ac110002" data={event}/>
+            <MyPieChart data={event.presences} event={event}/>
+            <UserPieChart key="89d1f4e4-ae0f-11ed-9bd8-0242ac110002" userId="89d1f4e4-ae0f-11ed-9bd8-0242ac110002"  data={events}/>
+            {/* <UserPieChart key={event.id} userId="89d1f4e4-ae0f-11ed-9bd8-0242ac110002" data={event}/> */}
           </Card.Body>
           <Card.Footer>
             <Button  className="btn btn-info" onClick={goToThirdPage}>Statistics Page</Button>
@@ -90,13 +91,12 @@ export const FrontPage = () => {
       
     const event = events.find((e) => e.id === eventId);
 
-
     if (event)
     {
         return (
           <div className='container'>
             {
-              currentPage === 'first' ? ( <FirstPage goToSecondPage={goToSecondPage} goToThirdPage={goToThirdPage} event={event} /> ) : 
+              currentPage === 'first' ? ( <FirstPage goToSecondPage={goToSecondPage} goToThirdPage={goToThirdPage} event={event} events={events} /> ) : 
               currentPage === 'second' ? ( ( <SecondPage goToFirstPage= {goToFirstPage} goToThirdPage={goToThirdPage} event={event}/> ) ) : 
               ( <ThirdPage goToFirstPage= {goToFirstPage} goToSecondPage={goToSecondPage} event={event}/> )
             }

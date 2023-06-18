@@ -2,8 +2,20 @@ import 'chart.js/auto';
 import { Pie } from 'react-chartjs-2';
 
 
-export const MyPieChart = ({ data }) => {
-    // Count the number of people with each presence type
+export const MyPieChart = ({ data, event }) => {
+    const chosedate = "2023-04-19T08:00:00";
+    const date = new Date(chosedate);  // new Date() → aktual date
+    const Enddate = new Date(event.enddate);
+    const Startdate = new Date(event.startdate);
+    // console.log(Startdate);
+    // console.log(date);
+    // console.log(Enddate);
+    let valid = false;
+    if (date <= Enddate && date >= Startdate) { 
+      valid = true;
+    }
+    
+    // Count the number of people with each presence type 
     const presenceCounts = data.reduce((counts, presence) => {
       const presenceType = presence.presenceType.name;
       counts[presenceType] = (counts[presenceType] || 0) + 1;
@@ -41,7 +53,7 @@ export const MyPieChart = ({ data }) => {
       ],
     };
   
-  
+   if (valid){
     return (
       <>
         <table className="table table-hover table-light table-bordered">
@@ -52,4 +64,8 @@ export const MyPieChart = ({ data }) => {
         </div>
       </>
     );
+   }
+   else{
+    return null
+   }
   };
