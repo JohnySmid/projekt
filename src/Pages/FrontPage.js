@@ -10,6 +10,7 @@ import { useState } from 'react';
 
 import { MyPieChart } from '../comp/EventsPie';
 import { UserPieChart } from '../comp/UserPie';
+import { MembershipPieChart } from '../comp/MembershipPie';
 
 const FirstPage = ({ goToSecondPage, goToThirdPage, event, events }) => {
   return (
@@ -31,8 +32,11 @@ const FirstPage = ({ goToSecondPage, goToThirdPage, event, events }) => {
           <Card.Body>
             <th>Event presence</th>
             <MyPieChart data={event.presences} event={event}/>
+            <br/>
             <UserPieChart key="89d1f4e4-ae0f-11ed-9bd8-0242ac110002" userId="89d1f4e4-ae0f-11ed-9bd8-0242ac110002"  data={events}/>
-            {/* <UserPieChart key={event.id} userId="89d1f4e4-ae0f-11ed-9bd8-0242ac110002" data={event}/> */}
+            <br/>
+            <MembershipPieChart key="2d9dd1c8-a4a2-11ed-b9df-0242ac120003" groupId="2d9dd1c8-a4a2-11ed-b9df-0242ac120003" data={events}/>
+            <br/>
           </Card.Body>
           <Card.Footer>
             <Button  className="btn btn-info" onClick={goToThirdPage}>Statistics Page</Button>
