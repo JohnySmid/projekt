@@ -79,7 +79,7 @@ export const InvitationForm = ({data, fulldata}) => {
       <Form.Label style={{ fontSize: '20px' }}>Invite Group</Form.Label>
         {/* <Form.Select value={strucutreGroup.groupId} onChange={(e) => {console.log(e.target.value) && <InviteGroupButton />}}> */}
         <Form.Select value={selectedOption} onChange={handleOptionChange}>  
-          {/* <option>Choose group</option> */}
+        <option>Choose group</option>
           {GroupTypeSetter.map((type) => {
             if (type.name) {
               return <option key={type.id} value={type.id}>{type.name}</option>;

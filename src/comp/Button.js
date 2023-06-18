@@ -1,5 +1,5 @@
-import React from 'react';
+// import React from 'react';
 
-export const LogButton = ({ onClick, typeofclick }) => {
-  return <button onClick={onClick}>{typeofclick}</button>;
-};
+// export const LogButton = ({ onClick, typeofclick }) => {
+//   return <button onClick={onClick}>{typeofclick}</button>;
+// };

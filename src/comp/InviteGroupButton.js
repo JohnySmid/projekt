@@ -61,6 +61,10 @@ export const InviteGroupButton = ({eventId, groupId}) => {
                                dispatch(PresenceInsertLoader({event_id: eventId, user_id: member.userId, 
                                 presencetype_id: "46639812-a79c-11ed-b76e-0242ac110002", invitation_id: "e8713fce-a79c-11ed-b76e-0242ac110002"}))
                              });
+                             // musim pak vynulovat pres useState
+
+                            //  structureGroupMemberUserId = "";
+                            //  setGroupMemberships("");
                           
                             
                            
