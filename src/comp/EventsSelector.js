@@ -1,29 +1,40 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import {changeEvent} from "../reducers/EventSlice"
+import { changeEvent } from "../reducers/EventSlice";
 
+// Komponenta pro výběr události
 export const EventsSelector = () => {
-    const data = useSelector((state) => state.events)
-    const dispatch = useDispatch()
+    // Získání dat o událostech ze stavu Redux pomocí hooku 'useSelector'
+    const data = useSelector((state) => state.events);
+    // Získání dispatch funkce ze stavu Redux pomocí hooku 'useDispatch'
+    const dispatch = useDispatch();
 
-    const [selectedOption, setSelectedOption] = useState('choose event')
+    // Lokální stav pro vybranou možnost
+    const [selectedOption, setSelectedOption] = useState('choose event');
+    
+    // Funkce pro změnu vybrané možnosti
     const handleOptionChange = (e) => {
         setSelectedOption(e);
-      }
+    }
 
-    if (data)
-    {
+    // Zobrazení select elementu pro výběr události
+    if (data) {
         return (
-            <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" 
-            value={selectedOption} onChange={(e) => 
-                {dispatch(changeEvent(e.target.value));
+            <select
+                className="form-select form-select-lg mb-3"
+                aria-label=".form-select-lg example"
+                value={selectedOption}
+                onChange={(e) => {
+                    // Vyvolání akce 'changeEvent' pomocí dispatch funkce a předání vybrané hodnoty
+                    dispatch(changeEvent(e.target.value));
                     handleOptionChange(e.target.value);
-                }
-            }>
+                }}
+            >
                 <option>Choose event</option>
+                {/* Pro každou událost se vytvoří option element */}
                 {data.map((e) => (
-                        <option key={e.id} value={e.id}>{e.name}</option>
-                ))};
+                    <option key={e.id} value={e.id}>{e.name}</option>
+                ))}
             </select>
         );
     }
