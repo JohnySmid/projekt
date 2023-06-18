@@ -17,7 +17,9 @@
 7. 6.  - Konečně zprovozněný slicer pro redux, napsání prosebného emailu na úpravu databáze 
 8. 6.  - Funguje nám konečně databáze, opravování query dotazů a mutations, udělání usermodalu
 9. 6.  - Drobrá úprava tabulky, zprovoznění usermodalu, aby komunikoval s databází... Hotové 2 červené body ze 4 (bohužel prej ne...)
+13. 6. - Přidan InvitationForm a fixnuta FrontPage dále přidan membership 
 14. 6. - Přidání kolačového diagramu + připrava na konzultaci (doladění komponent)
 15. 6. - vrácení do reality, zjištění, že jsme si přidělali navíc práci...
-16. 6. - Upravování podle návrhů pana profesora. (Celé to předělat)
-17.-18. 6. - Uprava eventsPie, který ukazuje přitomnost v daném časovém intervalu. Dále přidan userPie, který dle ID uživatele ukazuje absenci ve všech eventech. Už stači přidat membershipPie a je hotovo.
+16. 6. - Upravování podle návrhů pana profesora. (Celé to předělat) + přidan UserPie
+17.-18. 6. - GropoInvite konečne funguje. Uprava eventsPie, který ukazuje přitomnost v daném časovém intervalu. Dále přidan userPie, který dle ID uživatele ukazuje absenci ve všech eventech. Už stači přidat membershipPie a je hotovo.
+18. 6. - Je pozdni večer 18.6.2023 čas 22:01 a projekt je hotový (už jenom drobné úpravy)
