@@ -124,7 +124,7 @@ export const UserPresenceModal = ({data}) => {
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label>Jeste nefunguje!!! Hazi msg: undefined</Form.Label>
+                  {/* <Form.Label>Jeste nefunguje!!! Hazi msg: undefined</Form.Label> */}
                   <br />
                         <PresenceButton btnname={structurePresenceType[0]?.typeName}
                                         presenceId={structurePresence.presenceId} 
