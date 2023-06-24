@@ -11,17 +11,17 @@ import { PresenceButton } from './PresenceButton';
 
 export const UserPresenceModal = ({data}) => {
       // Modal
-    const [show, setShow] = useState(false);
-    const [PresenceTypeSetter, setPresenceTypeSetter] = useState([]);
-    const [invatationTypeSetter, setinvatationTypeSetter] = useState([]);
+    const [show, setShow] = useState(false)
+    const [PresenceTypeSetter, setPresenceTypeSetter] = useState([])
+    const [invatationTypeSetter, setinvatationTypeSetter] = useState([])
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false)
+    const handleShow = () => setShow(true)
   /////////////////////////////////////////////////////
   // Redux
-    const dispatch = useDispatch();
-    const [presenceType, setPresenceType] = useState(data.presenceType.id);
-    const [invatationType, setInvatationType] = useState(data.invitationType.id);
+    const dispatch = useDispatch()
+    const [presenceType, setPresenceType] = useState(data.presenceType.id)
+    const [invatationType, setInvatationType] = useState(data.invitationType.id)
 
     // Fetching presenceType
     const presenceTypeFetch = () => (dispatch, getState) => (
@@ -34,7 +34,7 @@ export const UserPresenceModal = ({data}) => {
             setPresenceTypeSetter(PresenceTypeSetter)
             //console.log(presenceType);
           } else {
-            console.log("Error ocurred in presenceTypeFetch function for fetching data from database: \n", console.error());
+            console.log("Error ocurred in presenceTypeFetch function for fetching data from database: \n", json)
           }
           return json
         })
@@ -52,7 +52,7 @@ export const UserPresenceModal = ({data}) => {
             setinvatationTypeSetter(invatationTypeSetter)
             //console.log(invatationTypeSetter);
           } else {
-            console.log("Error ocurred in invatationTypeFetch function for fetching data from database: \n", console.error());
+            console.log("Error ocurred in invatationTypeFetch function for fetching data from database: \n", json)
           }
           return json
         })
