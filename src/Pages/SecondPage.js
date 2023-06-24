@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 import { Button } from 'react-bootstrap';
 
 
-export const SecondPage = ({goToFirstPage, goToThirdPage, event}) => {
+export const SecondPage = ({goToFirstPage,  event}) => {
     return (
       <div className='container'>
         <Card>
