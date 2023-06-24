@@ -4,7 +4,7 @@ import { Info } from 'react-bootstrap-icons';
 import { useDispatch } from 'react-redux';
 import { PresenceType } from '../queries/PresenceTypeQuery';
 import { InvatationType } from '../queries/InvatationTypeQuery';
-import { PresenceMutationLoader } from '../actions/PresenceMutationLoader';
+import { PresenceMutationLoader } from '../actions/PresenceUpdateLoader';
 import { PresenceButton } from './PresenceButton';
 
 

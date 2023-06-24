@@ -1,13 +1,13 @@
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 
 
 
 
 
-export const InvatationPage = () => {
+// export const InvatationPage = () => {
 
-        return (
-         <Button> Back </Button>
-        );
+//         return (
+//          <Button> Back </Button>
+//         );
    
-}
+// }
