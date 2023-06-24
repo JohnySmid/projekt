@@ -63,7 +63,6 @@ export const UserPresenceModal = ({data}) => {
       lastchange: data.lastchange,
       presenceTypeId: presenceType,
       invitationTypeId: invatationType
-      
     }
 
     const structurePresenceType = PresenceTypeSetter.map((type) => {
