@@ -9,20 +9,6 @@ export const EventsLoader = () => {
   const dispatch = useDispatch();
   const [isDataLoaded, setIsDataLoaded] = useState(false);
 
- 
-  // const fetchData = async () => {
-  //   try {
-  //     const response = await EventsQuery();
-  //     const data = await response.json();
-  //     if (dispatch(loadData(data.data.eventPage))) {
-  //       console.log('Dispatch loadData works', data.data.eventPage);
-  //       setDates(data.data.eventPage); // Set the fetched dates to the state
-  //     }
-  //     setIsDataLoaded(true);
-  //   } catch (error) {
-  //     console.error('Error fetching group names:', error);
-  //   }
-  // };
 
    const fetchData = () => (dispatch, getState) => (
      EventsQuery()
