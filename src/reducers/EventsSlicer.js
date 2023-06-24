@@ -8,7 +8,22 @@ export const EventsSlicer = createSlice({
         // A reducer that adds a new project to the projects state array
     loadData: (state, action) => {
         const events = action.payload
-        state = [...state, ...events]
+        let newEvents = []
+        let checkForDuplicates = false
+
+        for (let event of events) {
+            for( let eventInState of state){
+                if(event.id === eventInState.id) {
+                    checkForDuplicates=true
+                }
+            }
+
+            if(!checkForDuplicates) {
+                newEvents.push(event)
+            }
+        }
+
+        state = [...state, ...newEvents]
         return state
        } , 
 

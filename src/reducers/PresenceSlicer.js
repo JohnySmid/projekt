@@ -8,7 +8,22 @@ export const PresenceSlicer = createSlice({
         // A reducer that adds a new project to the projects state array
     loadData: (state, action) => {
         const presence = action.payload
-        state = [...state, ...presence]
+        let newPresence = []
+        let checkForDuplicates = false
+
+        for (let pres of presence) {
+            for( let presInState of state){
+                if(pres.id === presInState.id) {
+                    checkForDuplicates=true
+                }
+            }
+
+            if(!checkForDuplicates) {
+                newPresence.push(pres)
+            }
+        }
+
+        state = [...state, ...newPresence]
         return state
        } , 
 
