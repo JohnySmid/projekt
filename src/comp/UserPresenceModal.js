@@ -24,7 +24,7 @@ export const UserPresenceModal = ({data}) => {
     const [invatationType, setInvatationType] = useState(data.invitationType.id);
 
     // Fetching presenceType
-    const presenceTypeFetch = () => (dispatch, getState) => {
+    const presenceTypeFetch = () => (dispatch, getState) => (
       PresenceType()
         .then(response => response.json())
         .then(json => {
@@ -38,10 +38,10 @@ export const UserPresenceModal = ({data}) => {
           }
           return json
         })
-    }
+    )
     
     // Fetching InvatationType
-    const invatationTypeFetch = () => (dispatch, getState) => {
+    const invatationTypeFetch = () => (dispatch, getState) => (
       // Call the ProjectsQuery function to fetch projects
       InvatationType()
         .then(response => response.json())
@@ -56,7 +56,7 @@ export const UserPresenceModal = ({data}) => {
           }
           return json
         })
-    }
+    )
 
     const structurePresence = {
       presenceId: data.id,
@@ -95,7 +95,7 @@ export const UserPresenceModal = ({data}) => {
                         <Form.Label>Invatation:</Form.Label>
                         <Form.Select value={structurePresence.invitationTypeId} onChange={(e) => {setInvatationType(e.target.value)}}>
                         {
-                            invatationTypeSetter && invatationTypeSetter.map((type) => {
+                            invatationTypeSetter.map((type) => {
                               if (type.name) {
                                 return <option key={type.id} value={type.id}>{type.name}</option>;
                               }
@@ -106,13 +106,13 @@ export const UserPresenceModal = ({data}) => {
                       </div>
                   </Form.Group>
                   <br /> <br />
-                  <Form.Group>
+                  <Form.Group>  
                     <div>
                       <Form.Label>Presence:</Form.Label>
                       <Form.Select value={structurePresence.presenceTypeId} onChange={(e) => {setPresenceType(e.target.value)}}>
                       {
                           PresenceTypeSetter && PresenceTypeSetter.map((type) => {
-                            if (type.name) {
+                            if (type.id) {
                               return <option key={type.id} value={type.id}>{type.name}</option>;
                             }
                             return null;
@@ -124,7 +124,6 @@ export const UserPresenceModal = ({data}) => {
                 </Form.Group>
 
                 <Form.Group>
-                  <Form.Label>Jeste nefunguje!!! Hazi msg: undefined</Form.Label>
                   <br />
                         <PresenceButton btnname={structurePresenceType[0]?.typeName}
                                         presenceId={structurePresence.presenceId} 
