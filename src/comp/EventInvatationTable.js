@@ -1,6 +1,12 @@
 import { InviteUserButton } from "./InviteUserButton";
 import { useSelector } from "react-redux";
 
+/**
+ * A component that displays a table of event invitations.
+ * @param {Array} data - The data containing invitation information.
+ * @returns {JSX.Element} - The rendered table component.
+ */
+
 // Komponenta pro zobrazení tabulky pozvánek na událost
 export const EventInvitationTable = ({ data }) => {
     // Získání hodnoty 'eventId' ze stavu Redux pomocí hooku 'useSelector'
@@ -29,6 +35,13 @@ export const EventInvitationTable = ({ data }) => {
         </>
     );
 };
+
+/**
+ * A component that represents a row in the event invitation table.
+ * @param {Object} presence - The presence object containing user information.
+ * @param {string} eventId - The ID of the event.
+ * @returns {JSX.Element} - The rendered table row component.
+ */
 
 // Komponenta pro řádek v tabulce pozvánek na událost
 const EventInvitationRow = ({ presence, eventId }) => { 

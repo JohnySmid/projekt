@@ -1,9 +1,6 @@
 import { AuthorizedFetch } from './AuthorizedFetch'
 
-/**
- * Funkce, ktera stahne groupu na zaklade id
- * @returns 
- */
+
 export const GroupByIdJSON = (groupId) => ({
     "query":
         `query{
@@ -32,8 +29,10 @@ export const GroupByIdJSON = (groupId) => ({
 
 
 /**
- * Realizace dotazu na server. Vyuziva autorizedFetch (zapouzdreni)
- * @returns 
+ * Retrieves a group by ID using an authorized request.
+ *
+ * @param {string} groupId - The ID of the group.
+ * @returns {Promise} Promise representing the group by ID request.
  */
 export const GroupByIdQuery = (groupId) =>
 AuthorizedFetch('/gql', {

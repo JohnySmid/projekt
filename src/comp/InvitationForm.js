@@ -6,6 +6,14 @@ import { EventsSelector } from './EventsSelector';
 import { InviteGroupButton } from './InviteGroupButton';
 import { EventInvitationTable } from './EventInvatationTable';
 
+/**
+ * A component that displays an invitation form for selecting and inviting users and groups to an event.
+ * @param {Object} props - The component props.
+ * @param {Object} props.data - The event data.
+ * @param {Object} props.fulldata - The full data.
+ * @returns {JSX.Element} - The rendered invitation form component.
+ */
+
 // Komponenta pro formulář pozvánky
 export const InvitationForm = ({ data, fulldata }) => {
     // redux

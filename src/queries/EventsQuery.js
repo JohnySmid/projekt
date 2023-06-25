@@ -47,7 +47,7 @@ export const EventsQueryJSON = () => ({
 
 /**
  * Realizace dotazu na server. Vyuziva autorizedFetch (zapouzdreni)
- * @returns 
+ * @returns {Promise} Promise representing the events query request.
  */
 export const EventsQuery = () =>
 AuthorizedFetch('/gql', {

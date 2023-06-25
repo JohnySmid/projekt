@@ -12,7 +12,11 @@ export const PresenceTypeJSON = () => ({
           }`,
 })
 
-
+/**
+ * Fetches the presence types using an authorized request.
+ *
+ * @returns {Promise} Promise representing the presence type fetch request.
+ */
 export const PresenceType = () =>
 AuthorizedFetch('/gql', {
         body: JSON.stringify(PresenceTypeJSON()),

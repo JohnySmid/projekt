@@ -1,6 +1,14 @@
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
 
+/**
+ * A component that displays a pie chart representing presence data for a user.
+ * @param {Object} props - The component props.
+ * @param {string} props.userId - The ID of the user.
+ * @param {Array} props.data - An array of events data.
+ * @returns {JSX.Element|null} - The rendered pie chart component or null if no events match the current date.
+ */
+
 export const UserPieChart = ({ userId, data }) => {
   // Extrahuje typy přítomnosti a počítá jejich výskyty
   const userEvents = data.filter(event => event.presences.find(presence => presence.user.id === userId) !== undefined);

@@ -3,6 +3,15 @@ import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { PresenceInsertLoader } from "../actions/PresenceInsertLoader";
 
+/**
+ * A component that displays a button to invite a user to an event.
+ * @param {Object} props - The component props.
+ * @param {string} props.eventId - The ID of the event.
+ * @param {string} props.userId - The ID of the user.
+ * @returns {JSX.Element} - The rendered button component.
+ */
+
+// uvest hpdnoty jako param
 export const InviteUserButton = ({ eventId, userId }) => {
     const dispatch = useDispatch();
 

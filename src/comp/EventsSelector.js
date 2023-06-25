@@ -2,6 +2,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { changeEvent } from "../reducers/EventSlice";
 
+/**
+ * A component that displays a selector for choosing an event.
+ * @returns {JSX.Element} - The rendered event selector component.
+ */
+
 // Komponenta pro výběr události
 export const EventsSelector = () => {
     // Získání dat o událostech ze stavu Redux pomocí hooku 'useSelector'

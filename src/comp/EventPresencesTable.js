@@ -1,5 +1,11 @@
 import { UserPresenceModal } from '../comp/UserPresenceModal';
 
+/**
+ * A component that displays a table of presences for an event.
+ * @param {Array} data - The data containing presences information.
+ * @returns {JSX.Element} - The rendered table component.
+ */
+
 // Komponenta pro zobrazení tabulky přítomností na události
 export const EventPresencesTable = ({ data }) => {
     return (
@@ -28,6 +34,12 @@ export const EventPresencesTable = ({ data }) => {
         </>
     );
 };
+
+/**
+ * A component that represents a row in the event presences table.
+ * @param {Object} presence - The presence object containing user information.
+ * @returns {JSX.Element} - The rendered table row component.
+ */
 
 // Komponenta pro řádek v tabulce přítomností na události
 const EventPresenceRow = ({ presence }) => { 

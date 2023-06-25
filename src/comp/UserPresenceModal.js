@@ -7,7 +7,12 @@ import { InvatationType } from '../queries/InvatationTypeQuery';
 import { PresenceMutationLoader } from '../actions/PresenceUpdateLoader';
 import { PresenceButton } from './PresenceButton';
 
-
+/**
+ * A component that displays a modal for user presence.
+ * @param {Object} props - The component props.
+ * @param {Array} props.data - An array of presence data.
+ * @returns {JSX.Element} - The rendered modal component.
+ */
 
 export const UserPresenceModal = ({data}) => {
       // Modal

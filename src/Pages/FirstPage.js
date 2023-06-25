@@ -8,6 +8,13 @@ import { MyPieChart } from '../comp/EventsPie';
 import { UserPieChart } from '../comp/UserPie';
 import { MembershipPieChart } from '../comp/MembershipPie';
 
+/**
+ * The first page component of the application.
+ * @param {function} goToSecondPage - Function to navigate to the second page.
+ * @param {Object} event - The selected event object.
+ * @param {Array} events - All events data.
+ * @returns {JSX.Element} - The rendered first page component.
+ */
 
 export const FirstPage = ({ goToSecondPage, event, events }) => {
     return (

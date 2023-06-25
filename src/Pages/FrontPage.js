@@ -59,7 +59,12 @@ import { SecondPage } from './SecondPage';
 //   );
 // };
 
-
+/**
+ * Front page component of the application.
+ * Renders either the first page or the second page based on the current state.
+ *
+ * @returns {JSX.Element} Front page component JSX.
+ */
 
 export const FrontPage = () => {
     const [currentPage, setCurrentPage] = useState('first');

@@ -5,6 +5,14 @@ import { useDispatch } from 'react-redux';
 import { GroupByIdQuery } from "../queries/GroupByIdQuery";
 import { PresenceInsertLoader } from "../actions/PresenceInsertLoader";
 
+/**
+ * A component that displays buttons to download group members and invite them to an event.
+ * @param {Object} props - The component props.
+ * @param {string} props.eventId - The ID of the event.
+ * @param {string} props.groupId - The ID of the group.
+ * @returns {JSX.Element} - The rendered button component.
+ */
+
 export const InviteGroupButton = ({ eventId, groupId }) => {
     const dispatch = useDispatch();
 

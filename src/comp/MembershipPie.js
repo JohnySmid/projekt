@@ -1,6 +1,14 @@
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
 
+/**
+ * A component that displays a pie chart for membership presence types.
+ * @param {Object} props - The component props.
+ * @param {string} props.groupId - The ID of the group.
+ * @param {Array} props.data - The data for the pie chart.
+ * @returns {JSX.Element} - The rendered pie chart component.
+ */
+
 export const MembershipPieChart = ({ groupId, data }) => {
     // Filtruje události patřící do dané skupiny
     const groupEvents = data.filter(event =>
