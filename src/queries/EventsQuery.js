@@ -1,9 +1,5 @@
 import { AuthorizedFetch } from './AuthorizedFetch'
 
-/**
- * Funkce, ktera id namapuje na json predstavujici "velky" (podrobny) dotaz na server
- * @returns 
- */
 export const EventsQueryJSON = () => ({
     "query":
         `query {

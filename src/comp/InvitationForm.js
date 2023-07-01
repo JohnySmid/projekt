@@ -42,7 +42,7 @@ export const InvitationForm = ({ data, fulldata }) => {
 
     // Strukturování uživatelů na základě přítomnosti
     const structureUsers = data.presences.map((presence) => {
-      console.log(presence.user.name);
+      //console.log(presence.user.name);
       if (presence.id) {
         return { userId: presence.user.id, userName: presence.user.name };
       }
