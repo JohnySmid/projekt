@@ -6,6 +6,7 @@ import { PresenceType } from '../queries/PresenceTypeQuery';
 import { InvatationType } from '../queries/InvatationTypeQuery';
 import { PresenceMutationLoader } from '../actions/PresenceUpdateLoader';
 import { PresenceButton } from './PresenceButton';
+import { ShowPresenceButton } from './ShowPresenceButton';
 
 /**
  * A component that displays a modal for user presence.
@@ -127,7 +128,9 @@ export const UserPresenceModal = ({data}) => {
                     </div>
                     <br />
                 </Form.Group>
-
+                <Form.Group>
+                        <ShowPresenceButton data={data}/>
+                </Form.Group>  
                 <Form.Group>
                   <br />
                         <PresenceButton btnname={structurePresenceType[0]?.typeName}
