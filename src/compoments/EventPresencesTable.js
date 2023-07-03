@@ -1,4 +1,4 @@
-import { UserPresenceModal } from '../comp/UserPresenceModal';
+import { UserPresenceModal } from '../compoments/UserPresenceModal';
 
 /**
  * A component that displays a table of presences for an event.

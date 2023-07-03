@@ -1,5 +1,5 @@
 import  { EventsLoader } from '../actions/EventsDataLoader';
-import { EventsSelector } from '../comp/EventsSelector';
+import {EventsSelector} from '../compoments/EventsSelector';
 import { useSelector } from 'react-redux';
 
 import Card from "react-bootstrap/Card";

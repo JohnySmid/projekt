@@ -1,12 +1,12 @@
-import { EventPresencesTable } from '../comp/EventPresencesTable';
-import { EventsSelector } from '../comp/EventsSelector';
+import { EventPresencesTable } from '../compoments/EventPresencesTable';
+import { EventsSelector } from '../compoments/EventsSelector';
 
 import Card from "react-bootstrap/Card";
 import { Button } from 'react-bootstrap';
 
-import { MyPieChart } from '../comp/EventsPie';
-import { UserPieChart } from '../comp/UserPie';
-import { MembershipPieChart } from '../comp/MembershipPie';
+import { MyPieChart } from '../compoments/EventsPie';
+import { UserPieChart } from '../compoments/UserPie';
+import { MembershipPieChart } from '../compoments/MembershipPie';
 
 /**
  * The first page component of the application.

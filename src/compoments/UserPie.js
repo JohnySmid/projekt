@@ -9,6 +9,26 @@ import { Pie } from 'react-chartjs-2';
  * @returns {JSX.Element|null} - The rendered pie chart component or null if no events match the current date.
  */
 
+// Slovník typů přítomnosti a jejich popisků a barev
+const presenceTypeDictionary = {
+  'Přítomen': {
+    label: 'Přítomen',
+    color: '#1af203', // Zelená
+  },
+  'Neomluven': {
+    label: 'Neomluven',
+    color: '#ff1748', // Červená
+  },
+  'Dovolená': {
+    label: 'Dovolená',
+    color: '#e5f900', // Žlutá
+  },
+  'Neuvedeno': {
+    label: 'Neuvedeno',
+    color: '#eb8109', // Oranžová (pro ostatní typy)
+  },
+};
+
 export const UserPieChart = ({ userId, data }) => {
   // Extrahuje typy přítomnosti a počítá jejich výskyty
   const userEvents = data.filter(event => event.presences.find(presence => presence.user.id === userId) !== undefined);
@@ -51,25 +71,15 @@ export const UserPieChart = ({ userId, data }) => {
   // Připraví data pro koláčový graf
   const chartData = {
     labels: Object.keys(presenceCounts).map((presenceType) => {
-      if (presenceType === 'Přítomen') {
-        return `Přítomen - ${userEvents[0]?.presences.find((presence) => presence.user.id === userId).user.name}`;
-      } else if (presenceType === 'Neomluven') {
-        return `Neomluven - ${userEvents[0]?.presences.find((presence) => presence.user.id === userId).user.name}`;
-      } else {
-        return `Dovolená - ${userEvents[0]?.presences.find((presence) => presence.user.id === userId).user.name}`;
-      }
+      const {label}  = presenceTypeDictionary[presenceType];
+      const group = userEvents[0]?.presences.find((presence) => presence.user.id === userId).user.name;
+      return `${label} - ${group}`;
     }),
     datasets: [
       {
         data: Object.values(presenceCounts),
         backgroundColor: Object.keys(presenceCounts).map((presenceType) => {
-          if (presenceType === 'Přítomen') {
-            return '#1af203'; // Zelená
-          } else if (presenceType === 'Neomluven') {
-            return '#ff1748'; // Červená
-          } else {
-            return '#e5f900'; // Žlutá (pro 'Dovolená')
-          }
+          return presenceTypeDictionary[presenceType].color;
         }),
       },
     ],
