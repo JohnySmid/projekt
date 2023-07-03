@@ -23,3 +23,7 @@
 16. 6. - Upravování podle návrhů pana profesora. (Celé to předělat) + přidan UserPie
 17.-18. 6. - GropoInvite konečne funguje. Uprava eventsPie, který ukazuje přitomnost v daném časovém intervalu. Dále přidan userPie, který dle ID uživatele ukazuje absenci ve všech eventech. Už stači přidat membershipPie a je hotovo.
 18. 6. - Je pozdni večer 18.6.2023 čas 22:01 a projekt je hotový (už jenom drobné úpravy)
+19. 6. - Úprava na githubu, smazání png obrázku
+24. 6. - Korekce kódu, mazání zbytečných components
+1. 7. - Úprava query, přidání variables a smazání zbytečných souborů
+3. 7. - Přidání labels v modalu dodělávání jsdoc komentářů
