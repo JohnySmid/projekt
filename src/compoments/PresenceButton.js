@@ -30,7 +30,10 @@ export const PresenceButton = ({btnname, presenceId, lastchange, presenceTypeId,
             return (
                 <Button className={buttonClassName} onClick=
                 {() => {
-                            dispatch(PresenceMutationLoader(presenceId, lastchange, presenceTypeId, invitationTypeId));
+                            dispatch(PresenceMutationLoader({presenceId: presenceId, 
+                                                            lastchange: lastchange, 
+                                                            presenceTypeId: presenceTypeId, 
+                                                            invitationTypeId: invitationTypeId}));
                         }
                 }>{btnname}</Button>
             );

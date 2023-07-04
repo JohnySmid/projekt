@@ -162,8 +162,10 @@ export const UserPresenceModal = ({data}) => {
               Close
             </Button>
             <Button className="btn btn-blue" onClick={() => {
-              dispatch(PresenceMutationLoader(structurePresence.presenceId, structurePresence.lastchange, 
-                structurePresence.presenceTypeId, structurePresence.invitationTypeId));
+              dispatch(PresenceMutationLoader({presenceId: structurePresence.presenceId, 
+                                              lastchange: structurePresence.lastchange, 
+                                              presenceTypeId: structurePresence.presenceTypeId, 
+                                              invitationTypeId: structurePresence.invitationTypeId}));
             }}>
               Push
             </Button>

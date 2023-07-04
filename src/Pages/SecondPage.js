@@ -1,16 +1,16 @@
 
-import { InvitationForm } from '../comp/InvitationForm';
+import { InvitationForm } from '../compoments/InvitationForm';
 
 import Card from "react-bootstrap/Card";
 import { Button } from 'react-bootstrap';
 
 /**
- * Component for the second page of the application.
+ * componentonent for the second page of the application.
  * Renders an invitation form.
  *
  * @param {Function} goToFirstPage - Function to navigate back to the first page.
  * @param {Object} event - Event data.
- * @returns {JSX.Element} Second page component JSX.
+ * @returns {JSX.Element} Second page componentonent JSX.
  */
 
 export const SecondPage = ({goToFirstPage,  event}) => {

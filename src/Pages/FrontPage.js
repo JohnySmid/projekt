@@ -1,5 +1,5 @@
 import  { EventsLoader } from '../actions/EventsDataLoader';
-import { EventsSelector } from '../comp/EventsSelector';
+import { EventsSelector } from '../compoments/EventsSelector';
 import { useSelector } from 'react-redux';
 
 import Card from "react-bootstrap/Card";
@@ -60,10 +60,10 @@ import { SecondPage } from './SecondPage';
 // };
 
 /**
- * Front page component of the application.
+ * Front page componentonent of the application.
  * Renders either the first page or the second page based on the current state.
  *
- * @returns {JSX.Element} Front page component JSX.
+ * @returns {JSX.Element} Front page componentonent JSX.
  */
 
 export const FrontPage = () => {
