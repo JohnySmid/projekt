@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 
 /**
  * Function that stores fetch function that loads events data.
+ *  @function
  */
 
 export const EventsLoader = () => {

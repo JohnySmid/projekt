@@ -4,6 +4,7 @@ import { updateData } from '../reducers/EventsSlicer';
 /**
  * Presence Update Function
  * Update presence data into the database and updates the Redux store with the modify presence.
+ * @function
  * @param {string} presenceId - The ID of the presence.
  * @param {string} lastchange - The last change timestamp.
  * @param {string} presenceTypeId - The ID of the presence type.
