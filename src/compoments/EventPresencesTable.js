@@ -1,4 +1,4 @@
- import { UserPresenceModal } from '../compoments/UserPresenceModal';
+ import { UserPresenceModal } from './UserPresenceModal';
 
 
 /**
