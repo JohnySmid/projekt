@@ -1,67 +1,14 @@
 import  { EventsLoader } from '../actions/EventsDataLoader';
-<<<<<<< HEAD
 import { EventsSelector } from '../compoments/EventsSelector';
-=======
-import {EventsSelector} from '../compoments/EventsSelector';
->>>>>>> 8857ccc3bd7d1a22f65b0030d99022b5663eb18c
+ 
 import { useSelector } from 'react-redux';
 
 import Card from "react-bootstrap/Card";
 import { useState } from 'react';
 
-
 import { FirstPage } from './FirstPage';
 import { SecondPage } from './SecondPage';
 
-// const FirstPage = ({ goToSecondPage, goToThirdPage, event, events }) => {
-//   return (
-//     <div className='container'>
-//         <Card>
-//           <Card.Title>Presence</Card.Title>
-//           <Card.Body>
-//             <EventsSelector />
-//             <EventPresencesTable key={event.id} data={event.presences}/>
-//           </Card.Body>
-//           <Card.Footer>
-//             <Button  className="btn btn-info" onClick={goToSecondPage}>Invatation Page</Button>
-//           </Card.Footer>
-//         </Card>
-//         <br />
-//         <br />
-//         <Card>
-//           <Card.Title>Pie graph presence</Card.Title>
-//           <Card.Body>
-//             <th>Event presence</th>
-//             <MyPieChart data={event.presences} event={event}/>
-//             <br/>
-//             <UserPieChart key="89d1f4e4-ae0f-11ed-9bd8-0242ac110002" userId="89d1f4e4-ae0f-11ed-9bd8-0242ac110002"  data={events}/>
-//             <br/>
-//             <MembershipPieChart key="2d9dd1c8-a4a2-11ed-b9df-0242ac120003" groupId="2d9dd1c8-a4a2-11ed-b9df-0242ac120003" data={events}/>
-//             <br/>
-//           </Card.Body>
-//           <Card.Footer>
-//             <Button  className="btn btn-info" onClick={goToThirdPage}>Statistics Page</Button>
-//           </Card.Footer>
-//         </Card>
-//     </div>
-//   );
-// };
-
-// const SecondPage = ({goToFirstPage, goToThirdPage, event}) => {
-//   return (
-//     <div className='container'>
-//       <Card>
-//           <Card.Title>Invatation</Card.Title>
-//           <Card.Body>
-//             <InvitationForm data={event}/>
-//           </Card.Body>
-//           <Card.Footer>
-//           <Button className="btn btn-info" onClick={goToFirstPage}>Presence Page</Button>
-//           </Card.Footer>
-//         </Card>
-//     </div>
-//   );
-// };
 
 /**
  * Front page componentonent of the application.
