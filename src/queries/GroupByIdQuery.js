@@ -6,6 +6,7 @@ import { AuthorizedFetch } from './AuthorizedFetch';
  * @param {string} groupId - The ID of the group.
  * @returns {Object} The JSON object for the group by ID query.
  */
+
 export const GroupByIdJSON = (groupId) => ({
   "query": `
     query GroupById($groupId: ID!) {
@@ -34,7 +35,7 @@ export const GroupByIdJSON = (groupId) => ({
   variables: {
     groupId
   }
-});
+})
 
 /**
  * Retrieves a group by ID using an authorized request.

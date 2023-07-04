@@ -1,5 +1,11 @@
 import { AuthorizedFetch } from './AuthorizedFetch'
 
+/**
+ * Generates the JSON object for retrieving events, presences.
+ *
+ * @returns {Object} eventPage type JSON object.
+ */
+
 export const EventsQueryJSON = () => ({
     "query":
         `query {
@@ -42,9 +48,11 @@ export const EventsQueryJSON = () => ({
 })
 
 /**
- * Realizace dotazu na server. Vyuziva autorizedFetch (zapouzdreni)
- * @returns {Promise} Promise representing the events query request.
+ * Retrieves eventPage using an authorized request.
+ *
+ * @returns {Promise} Promise representing the groups request.
  */
+ 
 export const EventsQuery = () =>
 AuthorizedFetch('/gql', {
         body: JSON.stringify(EventsQueryJSON()),

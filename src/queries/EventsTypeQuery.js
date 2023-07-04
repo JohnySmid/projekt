@@ -1,5 +1,11 @@
 import { AuthorizedFetch } from './AuthorizedFetch'
 
+/**
+ * Generates the JSON object for retrieving event types.
+ *
+ * @returns {Object} events type JSON object.
+ */
+
 export const EventsTypePageJSON = () => ({
     "query":
         `query{
@@ -11,11 +17,11 @@ export const EventsTypePageJSON = () => ({
 })
 
 /**
- * Generates the JSON object for retrieving the events type page.
+ * Retrieves events type using an authorized request.
  *
- * @returns {Object} Events type page query JSON object.
+ * @returns {Promise} Promise representing the eventTypePage request.
  */
-
+ 
 export const EventsTypePageQuery = () =>
 AuthorizedFetch('/gql', {
         body: JSON.stringify(EventsTypePageJSON()),

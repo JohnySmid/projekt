@@ -1,5 +1,11 @@
 import { AuthorizedFetch } from './AuthorizedFetch'
 
+/**
+ * Generates the JSON object for retrieve presence types.
+ *
+ * @returns {Object} presence type JSON object.
+ */
+
 
 export const PresenceTypeJSON = () => ({
     "query":
@@ -13,10 +19,11 @@ export const PresenceTypeJSON = () => ({
 })
 
 /**
- * Fetches the presence types using an authorized request.
+ * Retrieves presence types using an authorized request.
  *
  * @returns {Promise} Promise representing the presence type fetch request.
  */
+
 export const PresenceType = () =>
 AuthorizedFetch('/gql', {
         body: JSON.stringify(PresenceTypeJSON()),

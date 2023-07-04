@@ -13,6 +13,7 @@ const globalFetchParams = {
  * @param {Object} params - The parameters for the fetch request.
  * @returns {Promise} Promise representing the fetch request.
  */
+
 export const AuthorizedFetch = (path, params) => {
     const newParams = {...globalFetchParams, ...params} // allow owerwrite default parameters (globalFetchParams)
     const overridenPath = '/api/gql'
