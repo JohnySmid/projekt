@@ -9,8 +9,31 @@ import { Pie } from 'react-chartjs-2';
  * @returns {JSX.Element} - The rendered pie chart component.
  */
 
+
+// Slovník typů přítomnosti a jejich popisků a barev
+const presenceTypeDictionary = {
+  'Přítomen': {
+    label: 'Přítomen',
+    color: '#1af203', // Zelená
+  },
+  'Neomluven': {
+    label: 'Neomluven',
+    color: '#ff1748', // Červená
+  },
+  'Dovolená': {
+    label: 'Dovolená',
+    color: '#e5f900', // Žlutá
+  },
+  'Neuvedeno': {
+    label: 'Neuvedeno',
+    color: '#eb8109', // Oranžová (pro ostatní typy)
+  },
+};
+
+
 export const MembershipPieChart = ({ groupId, data }) => {
-    // Filtruje události patřící do dané skupiny
+  
+  // Filtruje události patřící do dané skupiny
     const groupEvents = data.filter(event =>
       event.presences.find(
         presence => presence.user.membership[0].group.id === groupId
@@ -55,29 +78,15 @@ export const MembershipPieChart = ({ groupId, data }) => {
     // Připraví data pro koláčový graf
     const chartData = {
       labels: Object.keys(presenceCounts).map(presenceType => {
-        if (presenceType === 'Přítomen') {
-          return `Přítomen - ${groupEvents[0].presences.find(presence => presence.user.membership[0].group.id === groupId).user.membership[0].group.name}`
-        } else if (presenceType === 'Neomluven') {
-          return `Neomluven - ${groupEvents[0].presences.find(presence => presence.user.membership[0].group.id === groupId).user.membership[0].group.name}`
-        } else if (presenceType === 'Dovolená') {
-          return `Dovolená - ${groupEvents[0].presences.find(presence => presence.user.membership[0].group.id === groupId).user.membership[0].group.name}`
-        } else {
-          return `Neuvedeno - ${groupEvents[0].presences.find(presence => presence.user.membership[0].group.id === groupId).user.membership[0].group.name}`
-        }
+        const { label } = presenceTypeDictionary[presenceType];
+        const group = groupEvents[0].presences.find(presence => presence.user.membership[0].group.id === groupId).user.membership[0].group.name;
+        return `${label} - ${group}`;
       }),
       datasets: [
         {
           data: Object.values(presenceCounts),
           backgroundColor: Object.keys(presenceCounts).map(presenceType => {
-            if (presenceType === 'Přítomen') {
-              return '#1af203'; // Zelená
-            } else if (presenceType === 'Neomluven') {
-              return '#ff1748'; // Červená
-            } else if (presenceType === 'Dovolená'){
-              return '#e5f900'; // Žlutá (pro 'Dovolená')
-            } else {
-              return '#eb8109'; // Oranžová 
-            }
+            return presenceTypeDictionary[presenceType].color;
           }),
         },
       ],

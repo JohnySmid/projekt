@@ -9,6 +9,26 @@ import { Pie } from 'react-chartjs-2';
  * @returns {JSX.Element|null} - The rendered pie chart component or null if the date is outside the event range.
  */
 
+// Slovník typů přítomnosti a jejich popisků a barev
+const presenceTypeDictionary = {
+  'Přítomen': {
+    label: 'Přítomen',
+    color: '#1af203', // Zelená
+  },
+  'Neomluven': {
+    label: 'Neomluven',
+    color: '#ff1748', // Červená
+  },
+  'Dovolená': {
+    label: 'Dovolená',
+    color: '#e5f900', // Žlutá
+  },
+  'Neuvedeno': {
+    label: 'Neuvedeno',
+    color: '#eb8109', // Oranžová (pro ostatní typy)
+  },
+};
+
 export const MyPieChart = ({ data, event }) => {
     
   const chosedate = "2023-04-19T08:00:00";
@@ -31,29 +51,14 @@ export const MyPieChart = ({ data, event }) => {
   // Připravuje objekt dat pro koláčový graf
   const chartData = {
     labels: Object.keys(presenceCounts).map(presenceType => {
-      if (presenceType === 'Přítomen') {
-        return 'Přítomen'
-      } else if (presenceType === 'Neomluven') {
-        return 'Neomluven'
-      } else if (presenceType === 'Dovolená') {
-        return 'Dovolená'
-      } else {
-        return 'Neuvedeno'
-      }
+      const { label } = presenceTypeDictionary[presenceType];
+      return `${label}`;
     }),
     datasets: [
       {
         data: Object.values(presenceCounts),
         backgroundColor: Object.keys(presenceCounts).map(presenceType => {
-          if (presenceType === 'Přítomen') {
-            return '#1af203' // Zelená
-          } else if (presenceType === 'Neomluven') {
-            return '#ff1748' // Červená
-          } else if (presenceType === 'Dovolená') {
-            return '#e5f900' // Žlutá
-          } else {
-            return '#eb8109' // Oranžová (pro ostatní typy)
-          }
+          return presenceTypeDictionary[presenceType].color;
         }),
       },
     ],
