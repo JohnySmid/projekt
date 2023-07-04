@@ -27,3 +27,4 @@
 24. 6. - Korekce kódu, mazání zbytečných components
 1. 7. - Úprava query, přidání variables a smazání zbytečných souborů
 3. 7. - Přidání labels v modalu dodělávání jsdoc komentářů + přídán dictionary do grafů a drobné úpravy
+4. 7. - Nemám rád jsdoc, upravování a ujednotnění @param v komponent a queries, přidání @param do actions
