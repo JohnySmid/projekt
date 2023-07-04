@@ -25,5 +25,8 @@ yarn-error.log*
 # pictures
 *.png
 
+# fake data
+src/data/FakeDatabase.json
+
 # journal
 Deník.txt
