@@ -2,9 +2,15 @@ import { PresenceMutation } from '../queries/PresenceMutation';
 import { updateData } from '../reducers/EventsSlicer';
 
 /**
- * Asynchronous action creator that fetches projects.
- * @returns {Function} A function that accepts the 'dispatch' and 'getState' functions from Redux.
+ * Presence Update Function
+ * Update presence data into the database and updates the Redux store with the modify presence.
+ * @param {string} presenceId - The ID of the presence.
+ * @param {string} lastchange - The last change timestamp.
+ * @param {string} presenceTypeId - The ID of the presence type.
+ * @param {string} invitationTypeId - The ID of the invitation type.
+ * @returns {Function} The presence update loader function.
  */
+
 export const PresenceMutationLoader = ({presenceId, lastchange, presenceTypeId, invitationTypeId}) => (dispatch, getState) => (
     PresenceMutation(presenceId, lastchange, presenceTypeId, invitationTypeId)
       .then(response => response.json())

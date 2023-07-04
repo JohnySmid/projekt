@@ -1,11 +1,22 @@
 import { createSlice, current } from "@reduxjs/toolkit";
 
-// A Redux slice for managing the state of the projects
+/**
+ * Redux slice for managing the state of events.
+ * @constant {Object}
+ * @param {string} name - The name of the slice.
+ * @param {Array} initialState - The initial state of the slice, an array of events.
+ * @param {Object} reducers - An object containing reducer functions.
+ *   @property {Function} loadData - A reducer that loads events data into the state, avoiding duplicates.
+ *   @property {Function} addData - A reducer that adds a new data to the state.
+ *   @property {Function} updateData - A reducer that updates an existing data/presence in event state.
+ *   @property {Function} addPresence - A reducer that adds a presence to an event in the state.
+ * @returns {Object} The created Redux slice.
+ */
+
 export const EventsSlicer = createSlice({
     name: "events",
     initialState: [],
     reducers: {
-        // A reducer that adds a new project to the projects state array
     loadData: (state, action) => {
         const events = action.payload
         let newEvents = []
@@ -37,8 +48,6 @@ export const EventsSlicer = createSlice({
         const updateData = action.payload
         const event =  current(state).find(event => event.id === updateData.event.id)
         const newPresences = event.presences.map(presence => presence.id === updateData.id ? {...presence, ...updateData} : presence)
-        // console.log('newPresences:',newPresences)
-        // console.log('event.presences:', event.presences)
         const newEvent =  { ...event, presences: newPresences }
         state = current(state).map(event => event.id === newEvent.id ? newEvent  : event)
         return state
@@ -54,8 +63,8 @@ export const EventsSlicer = createSlice({
     },
 })
 
-// Export the addProject action creator from the projectsSlice
+// Export the loadData, addData, updateData action from the EventsSlicer
 export const { loadData, addData, updateData, addPresence} = EventsSlicer.actions
 
-// Export the projectsSlice reducer
+// Export the EventsSlicer reducer
 export default EventsSlicer.reducer

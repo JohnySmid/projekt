@@ -10,6 +10,7 @@ import { Button, Form } from 'react-bootstrap';
  * @param {string} data.invitationType.name - Name of the invitation type.
  * @returns {JSX.Element} ShowPresenceButton component.
  */
+
 export const ShowPresenceButton = ({ data }) => {
   const [presenceTypeName, setPresenceTypeName] = useState(data.presenceType.name);
   const [invitationTypeName, setInvitationTypeName] = useState(data.invitationType.name);

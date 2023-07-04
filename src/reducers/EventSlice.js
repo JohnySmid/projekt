@@ -1,6 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// A Redux slice for managing the state of the projects
+/**
+ * Redux slice for managing the state of the events.
+ * @constant {Object}
+ * @param {string} name - The name of the slice.
+ * @param {*} initialState - The initial state of the slice.
+ * @param {Object} reducers - An object containing reducer functions.
+ *   @property {Function} changeEvent - A reducer that updates the event state.
+ * @returns {Object} The created Redux slice.
+ */
+
 export const EventSlice = createSlice({
     name: "event",
     initialState: "",
@@ -14,8 +23,8 @@ export const EventSlice = createSlice({
     },
 })
 
-// Export the addProject action creator from the projectsSlice
+// Export the changeEvent action from the EventSlice
 export const { changeEvent } = EventSlice.actions
 
-// Export the projectsSlice reducer
+// Export the EventSlicer reducer
 export default EventSlice.reducer

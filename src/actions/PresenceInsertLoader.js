@@ -2,7 +2,7 @@ import { PresenceInsert } from "../queries/PresenceInsert";
 import { addPresence } from "../reducers/EventsSlicer";
 
 /**
- * Presence Insert Loader
+ * Presence Insert Function
  * Inserts presence data into the database and updates the Redux store with the new presence.
  * @param {string} event_id - The ID of the event.
  * @param {string} user_id - The ID of the user.
