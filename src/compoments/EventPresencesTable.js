@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-import { UserPresenceModal } from './UserPresenceModal';
-=======
-import { UserPresenceModal } from '../compoments/UserPresenceModal';
->>>>>>> 8857ccc3bd7d1a22f65b0030d99022b5663eb18c
+ import { UserPresenceModal } from '../compoments/UserPresenceModal';
+
 
 /**
  * A component that displays a table of presences for an event.
