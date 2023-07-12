@@ -27,18 +27,14 @@ export const MyPieChart = ({ data, event }) => {
       label: 'Dovolená',
       color: '#e5f900', // Žlutá
     },
-    'Neuvedeno': {
-      label: 'Neuvedeno',
-      color: '#eb8109', // Oranžová (pro ostatní typy)
-    },
   }
   
-  const chosedate = "2023-04-19T08:00:00";
+  const chosedate = "2023-04-19T08:00:00"
   const date = new Date(chosedate); // new Date() → aktuální datum
   const Enddate = new Date(event.enddate)
   const Startdate = new Date(event.startdate)
 
-  let valid = false;
+  let valid = false
   if (date <= Enddate && date >= Startdate) {
     valid = true
   }
@@ -53,14 +49,16 @@ export const MyPieChart = ({ data, event }) => {
   // Připravuje objekt dat pro koláčový graf
   const chartData = {
     labels: Object.keys(presenceCounts).map(presenceType => {
-      const { label } = presenceTypeDictionary[presenceType];
-      return `${label}`;
+      const presenceTypeInfo = presenceTypeDictionary[presenceType]
+      const label = presenceTypeInfo ? presenceTypeInfo.label : "Neuvedeno"
+      return label
     }),
     datasets: [
       {
         data: Object.values(presenceCounts),
         backgroundColor: Object.keys(presenceCounts).map(presenceType => {
-          return presenceTypeDictionary[presenceType].color;
+          const presenceTypeInfo = presenceTypeDictionary[presenceType]
+          return presenceTypeInfo ? presenceTypeInfo.color : "#eb8109"
         }),
       },
     ],
@@ -75,10 +73,10 @@ export const MyPieChart = ({ data, event }) => {
           {date.toLocaleString()}
         </div>
       </>
-    );
+    )
    }
    else{
     // Pokud zvolené datum není v rozmezí události, nezobrazuje se nic
     return null
    }
-  };
+  }

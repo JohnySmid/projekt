@@ -26,10 +26,6 @@ export const MembershipPieChart = ({ groupId, data }) => {
       label: 'Dovolená',
       color: '#e5f900', // Žlutá
     },
-    'Neuvedeno': {
-      label: 'Neuvedeno',
-      color: '#eb8109', // Oranžová (pro ostatní typy)
-    },
   }
   
   // Filtruje události patřící do dané skupiny
@@ -62,8 +58,8 @@ export const MembershipPieChart = ({ groupId, data }) => {
   
     // Extrahuje typy přítomnosti a počítá jejich výskyty pro konkrétní skupinu
     const presenceCounts = currentIndexes.reduce((counts, currentIndex) => {
-      const currentEvent = groupEvents[currentIndex];
-      console.log(currentEvent);
+      const currentEvent = groupEvents[currentIndex]
+      console.log(currentEvent)
       currentEvent.presences.forEach(presence => {
         if (presence.user.membership[0].group.id === groupId) {
           const presenceType = presence.presenceType.name
@@ -72,29 +68,30 @@ export const MembershipPieChart = ({ groupId, data }) => {
       })
       return counts;
     }, {})
-    console.log(presenceCounts)
   
     // Připraví data pro koláčový graf
     const chartData = {
-      labels: Object.keys(presenceCounts).map(presenceType => {
-        const { label } = presenceTypeDictionary[presenceType]
-        const group = groupEvents[0].presences.find(presence => presence.user.membership[0].group.id === groupId).user.membership[0].group.name
-        return `${label} - ${group}`
+  labels: Object.keys(presenceCounts).map(presenceType => {
+    const presenceTypeInfo = presenceTypeDictionary[presenceType]
+    const label = presenceTypeInfo ? presenceTypeInfo.label : "Neuvedeno"
+    const group = groupEvents[0]?.presences.find(presence => presence.user.membership[0].group.id === groupId).user.membership[0].group.name
+    return `${label} - ${group}`
+  }),
+  datasets: [
+    {
+      data: Object.values(presenceCounts),
+      backgroundColor: Object.keys(presenceCounts).map(presenceType => {
+        const presenceTypeInfo = presenceTypeDictionary[presenceType]
+        return presenceTypeInfo ? presenceTypeInfo.color : "#eb8109"
       }),
-      datasets: [
-        {
-          data: Object.values(presenceCounts),
-          backgroundColor: Object.keys(presenceCounts).map(presenceType => {
-            return presenceTypeDictionary[presenceType].color
-          }),
-        },
-      ],
-    }
+    },
+  ],
+}
   
     return (
       <div style={{ width: '300px', height: '300px' }}>
         <Pie data={chartData} />
         {currentDate.toLocaleString()}
       </div>
-    );
-  };
+    )
+  }

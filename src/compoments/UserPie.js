@@ -24,72 +24,70 @@ const presenceTypeDictionary = {
     label: 'Dovolená',
     color: '#e5f900', // Žlutá
   },
-  'Neuvedeno': {
-    label: 'Neuvedeno',
-    color: '#eb8109', // Oranžová (pro ostatní typy)
-  },
-};
+}
 
 export const UserPieChart = ({ userId, data }) => {
   // Extrahuje typy přítomnosti a počítá jejich výskyty
-  const userEvents = data.filter(event => event.presences.find(presence => presence.user.id === userId) !== undefined);
+  const userEvents = data.filter(event => event.presences.find(presence => presence.user.id === userId) !== undefined)
   
   // Sbírá všechny počáteční a koncové datumy událostí
-  const startDates = userEvents.map(event => new Date(event.startdate));
-  const endDates = userEvents.map(event => new Date(event.enddate));
+  const startDates = userEvents.map(event => new Date(event.startdate))
+  const endDates = userEvents.map(event => new Date(event.enddate))
 
   // Získá aktuální datum nebo vybrané.
-  const chosedate = "2022-04-19T08:00:00";
-  const currentDate = new Date(chosedate);   
+  const chosedate = "2022-04-19T08:00:00"
+  const currentDate = new Date(chosedate)  
 
   // Najde indexy událostí, které zahrnují aktuální datum
   const currentIndexes = startDates.reduce((indexes, startDate, index) => {
     if (startDate <= currentDate && currentDate <= endDates[index]) {
-      indexes.push(index);
+      indexes.push(index)
     }
-    return indexes;
-  }, []);
+    return indexes
+  }, [])
 
   // Pokud neobsahuje žádná událost aktuální datum, vrátí null
   if (currentIndexes.length === 0) {
-    return null;
+    return null
   }
 
   // Extrahuje typy přítomnosti a počítá jejich výskyty pro dané události a uživatele
   const presenceCounts = currentIndexes.reduce((counts, currentIndex) => {
-    const currentEvent = userEvents[currentIndex];
-    console.log(currentEvent);
+    const currentEvent = userEvents[currentIndex]
+    console.log(currentEvent)
     currentEvent.presences.forEach(presence => {
       if (presence.user.id === userId) {
         const presenceType = presence.presenceType.name;
-        counts[presenceType] = (counts[presenceType] || 0) + 1;
+        counts[presenceType] = (counts[presenceType] || 0) + 1
       }
-    });
-    return counts;
-  }, {});
-  console.log(presenceCounts);
+    })
+    return counts
+  }, {})
+
  
   // Připraví data pro koláčový graf
   const chartData = {
     labels: Object.keys(presenceCounts).map((presenceType) => {
-      const {label}  = presenceTypeDictionary[presenceType];
-      const group = userEvents[0]?.presences.find((presence) => presence.user.id === userId).user.name;
-      return `${label} - ${group}`;
+      const presenceTypeInfo = presenceTypeDictionary[presenceType]
+    const label = presenceTypeInfo ? presenceTypeInfo.label : "Neuvedeno"
+      const group = userEvents[0]?.presences.find((presence) => presence.user.id === userId).user.name
+      return `${label} - ${group}`
     }),
     datasets: [
       {
         data: Object.values(presenceCounts),
         backgroundColor: Object.keys(presenceCounts).map((presenceType) => {
-          return presenceTypeDictionary[presenceType].color;
+          const presenceTypeInfo = presenceTypeDictionary[presenceType]
+          return presenceTypeInfo ? presenceTypeInfo.color : "#eb8109";
         }),
       },
     ],
-  };
+  }
 
   return (
     <div style={{ width: '300px', height: '300px' }}>
       <Pie data={chartData} />
       {currentDate.toLocaleString()}
     </div>
-  );
-};
+  )
+}
