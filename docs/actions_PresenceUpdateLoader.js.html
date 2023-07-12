@@ -33,10 +33,11 @@ import { updateData } from '../reducers/EventsSlicer';
  * Presence Update Function
  * Update presence data into the database and updates the Redux store with the modify presence.
  * @function
- * @param {string} presenceId - The ID of the presence.
- * @param {string} lastchange - The last change timestamp.
- * @param {string} presenceTypeId - The ID of the presence type.
- * @param {string} invitationTypeId - The ID of the invitation type.
+ * @param {Object} props - The component props.
+ * @param {string} props.presenceId - The ID of the presence.
+ * @param {string} props.lastchange - The last change timestamp.
+ * @param {string} props.presenceTypeId - The ID of the presence type.
+ * @param {string} props.invitationTypeId - The ID of the invitation type.
  * @returns {Function} The presence update loader function.
  */
 
@@ -56,7 +57,7 @@ export const PresenceMutationLoader = ({presenceId, lastchange, presenceTypeId, 
         return json
       })
       .catch(error => {
-        console.log('Error occurred in PresenceMutationLoader:', error);
+        console.log('Error occurred in PresenceMutationLoader:', error)
       })
 )</code></pre>
         </article>
@@ -68,13 +69,13 @@ export const PresenceMutationLoader = ({presenceId, lastchange, presenceTypeId, 
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#AuthorizedFetch">AuthorizedFetch</a></li><li><a href="global.html#EventInvitationRow">EventInvitationRow</a></li><li><a href="global.html#EventInvitationTable">EventInvitationTable</a></li><li><a href="global.html#EventPresenceRow">EventPresenceRow</a></li><li><a href="global.html#EventPresencesTable">EventPresencesTable</a></li><li><a href="global.html#EventSlice">EventSlice</a></li><li><a href="global.html#EventsLoader">EventsLoader</a></li><li><a href="global.html#EventsQuery">EventsQuery</a></li><li><a href="global.html#EventsQueryJSON">EventsQueryJSON</a></li><li><a href="global.html#EventsSelector">EventsSelector</a></li><li><a href="global.html#EventsSlicer">EventsSlicer</a></li><li><a href="global.html#EventsTypePageJSON">EventsTypePageJSON</a></li><li><a href="global.html#EventsTypePageQuery">EventsTypePageQuery</a></li><li><a href="global.html#FirstPage">FirstPage</a></li><li><a href="global.html#FrontPage">FrontPage</a></li><li><a href="global.html#GroupByIdJSON">GroupByIdJSON</a></li><li><a href="global.html#GroupByIdQuery">GroupByIdQuery</a></li><li><a href="global.html#GroupsQuery">GroupsQuery</a></li><li><a href="global.html#GroupsQueryJSON">GroupsQueryJSON</a></li><li><a href="global.html#InvatationType">InvatationType</a></li><li><a href="global.html#InvatationTypeJSON">InvatationTypeJSON</a></li><li><a href="global.html#InvitationForm">InvitationForm</a></li><li><a href="global.html#InviteGroupButton">InviteGroupButton</a></li><li><a href="global.html#InviteUserButton">InviteUserButton</a></li><li><a href="global.html#MembershipPieChart">MembershipPieChart</a></li><li><a href="global.html#PresenceButton">PresenceButton</a></li><li><a href="global.html#PresenceInsert">PresenceInsert</a></li><li><a href="global.html#PresenceInsertJSON">PresenceInsertJSON</a></li><li><a href="global.html#PresenceInsertLoader">PresenceInsertLoader</a></li><li><a href="global.html#PresenceMutation">PresenceMutation</a></li><li><a href="global.html#PresenceMutationJSON">PresenceMutationJSON</a></li><li><a href="global.html#PresenceMutationLoader">PresenceMutationLoader</a></li><li><a href="global.html#PresenceType">PresenceType</a></li><li><a href="global.html#PresenceTypeJSON">PresenceTypeJSON</a></li><li><a href="global.html#SecondPage">SecondPage</a></li><li><a href="global.html#ShowPresenceButton">ShowPresenceButton</a></li><li><a href="global.html#Store">Store</a></li><li><a href="global.html#UserPresenceModal">UserPresenceModal</a></li><li><a href="global.html#presenceTypeDictionary">presenceTypeDictionary</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#AuthorizedFetch">AuthorizedFetch</a></li><li><a href="global.html#EventInvitationRow">EventInvitationRow</a></li><li><a href="global.html#EventInvitationTable">EventInvitationTable</a></li><li><a href="global.html#EventPresenceRow">EventPresenceRow</a></li><li><a href="global.html#EventPresencesTable">EventPresencesTable</a></li><li><a href="global.html#EventSlice">EventSlice</a></li><li><a href="global.html#EventsDataLoader">EventsDataLoader</a></li><li><a href="global.html#EventsQuery">EventsQuery</a></li><li><a href="global.html#EventsQueryJSON">EventsQueryJSON</a></li><li><a href="global.html#EventsSelector">EventsSelector</a></li><li><a href="global.html#EventsSlicer">EventsSlicer</a></li><li><a href="global.html#EventsTypePageJSON">EventsTypePageJSON</a></li><li><a href="global.html#EventsTypePageQuery">EventsTypePageQuery</a></li><li><a href="global.html#FirstPage">FirstPage</a></li><li><a href="global.html#FrontPage">FrontPage</a></li><li><a href="global.html#GroupByIdJSON">GroupByIdJSON</a></li><li><a href="global.html#GroupByIdQuery">GroupByIdQuery</a></li><li><a href="global.html#GroupsQuery">GroupsQuery</a></li><li><a href="global.html#GroupsQueryJSON">GroupsQueryJSON</a></li><li><a href="global.html#InvatationType">InvatationType</a></li><li><a href="global.html#InvatationTypeJSON">InvatationTypeJSON</a></li><li><a href="global.html#InvitationForm">InvitationForm</a></li><li><a href="global.html#InviteGroupButton">InviteGroupButton</a></li><li><a href="global.html#InviteUserButton">InviteUserButton</a></li><li><a href="global.html#MembershipPieChart">MembershipPieChart</a></li><li><a href="global.html#MyPieChart">MyPieChart</a></li><li><a href="global.html#PresenceButton">PresenceButton</a></li><li><a href="global.html#PresenceInsert">PresenceInsert</a></li><li><a href="global.html#PresenceInsertJSON">PresenceInsertJSON</a></li><li><a href="global.html#PresenceInsertLoader">PresenceInsertLoader</a></li><li><a href="global.html#PresenceMutation">PresenceMutation</a></li><li><a href="global.html#PresenceMutationJSON">PresenceMutationJSON</a></li><li><a href="global.html#PresenceMutationLoader">PresenceMutationLoader</a></li><li><a href="global.html#PresenceType">PresenceType</a></li><li><a href="global.html#PresenceTypeJSON">PresenceTypeJSON</a></li><li><a href="global.html#SecondPage">SecondPage</a></li><li><a href="global.html#ShowPresenceButton">ShowPresenceButton</a></li><li><a href="global.html#Store">Store</a></li><li><a href="global.html#UserPieChart">UserPieChart</a></li><li><a href="global.html#UserPresenceModal">UserPresenceModal</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Wed Jul 12 2023 14:24:57 GMT+0200 (středoevropský letní čas)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Wed Jul 12 2023 19:28:06 GMT+0200 (středoevropský letní čas)
 </footer>
 
 <script> prettyPrint(); </script>
