@@ -28,7 +28,7 @@ export const MyPieChart = ({ data, event }) => {
       color: '#e5f900', // Žlutá
     },
   }
-  
+   
   const chosedate = "2023-04-19T08:00:00"
   const date = new Date(chosedate); // new Date() → aktuální datum
   const Enddate = new Date(event.enddate)
