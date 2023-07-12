@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 // Komponenta pro zobrazení tabulky pozvánek na událost
 export const EventInvitationTable = ({ data }) => {
     // Získání hodnoty 'eventId' ze stavu Redux pomocí hooku 'useSelector'
-    const eventId = useSelector((state) => state.event);
+    const eventId = useSelector((state) => state.event)
     return (
         <>
         {/* Tabulka */}

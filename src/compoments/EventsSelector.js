@@ -12,16 +12,16 @@ import { changeEvent } from "../reducers/EventSlice";
 // Komponenta pro výběr události
 export const EventsSelector = () => {
     // Získání dat o událostech ze stavu Redux pomocí hooku 'useSelector'
-    const data = useSelector((state) => state.events);
+    const data = useSelector((state) => state.events)
     // Získání dispatch funkce ze stavu Redux pomocí hooku 'useDispatch'
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
 
     // Lokální stav pro vybranou možnost
-    const [selectedOption, setSelectedOption] = useState('choose event');
+    const [selectedOption, setSelectedOption] = useState('choose event')
     
     // Funkce pro změnu vybrané možnosti
     const handleOptionChange = (e) => {
-        setSelectedOption(e);
+        setSelectedOption(e)
     }
 
     // Zobrazení select elementu pro výběr události
@@ -33,8 +33,8 @@ export const EventsSelector = () => {
                 value={selectedOption}
                 onChange={(e) => {
                     // Vyvolání akce 'changeEvent' pomocí dispatch funkce a předání vybrané hodnoty
-                    dispatch(changeEvent(e.target.value));
-                    handleOptionChange(e.target.value);
+                    dispatch(changeEvent(e.target.value))
+                    handleOptionChange(e.target.value)
                 }}
             >
                 <option>Choose event</option>

@@ -16,20 +16,20 @@ import { PresenceInsertLoader } from "../actions/PresenceInsertLoader";
 
 
 export const InviteGroupButton = ({ eventId, groupId }) => {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
 
-    const [GroupMemberships, setGroupMemberships] = useState([]);
+    const [GroupMemberships, setGroupMemberships] = useState([])
 
     const groupMemebersFetch = () => (dispatch, getState) => {
       // Funkce pro načtení členů skupiny pomocí GroupByIdQuery
       GroupByIdQuery(groupId)
         .then(response => response.json())
         .then(json => {
-          const GroupMemberships = json.data?.groupById.memberships;
+          const GroupMemberships = json.data?.groupById.memberships
           if (GroupMemberships) {
-            setGroupMemberships(GroupMemberships);
+            setGroupMemberships(GroupMemberships)
           } else {
-            console.log("Error ocurred in GroupByIdQueryFetch function for fetching data from database: \n");
+            console.log("Error ocurred in GroupByIdQueryFetch function for fetching data from database: \n")
           }
           return json;
         });
@@ -38,30 +38,30 @@ export const InviteGroupButton = ({ eventId, groupId }) => {
     const structureGroupMemberUserId = GroupMemberships.map((member) => {
       // Vytvoření struktury pro členské ID a uživatelské ID
       if (member.id) {
-        return { memberId: member.id, userId: member.user.id };
+        return { memberId: member.id, userId: member.user.id }
       }
-      return null;
-    });
+      return null
+    })
 
     return (
       <>
         <br />
         <Button className="btn btn-secondary" onClick={() => {
           // Kliknutí na tlačítko "stáhnout members"
-          console.log("eventID: ", eventId, "groupId: ", groupId);
-          dispatch(groupMemebersFetch(groupId));
+          console.log("eventID: ", eventId, "groupId: ", groupId)
+          dispatch(groupMemebersFetch(groupId))
         }}>stáhnout members</Button>
         <Button className="btn btn-secondary" onClick={() => {
           // Kliknutí na tlačítko "pozvat"
           structureGroupMemberUserId.forEach((member) => {
-            console.log('user: ', member.userId);
+            console.log('user: ', member.userId)
             dispatch(PresenceInsertLoader({
               event_id: eventId,
               user_id: member.userId,
               presencetype_id: "46639812-a79c-11ed-b76e-0242ac110002",
               invitation_id: "e8713fce-a79c-11ed-b76e-0242ac110002"
-            }));
-          });
+            }))
+          })
           // Musíte někde vynulovat hodnotu GroupMemberships?
         }}>pozvat</Button>
       </>

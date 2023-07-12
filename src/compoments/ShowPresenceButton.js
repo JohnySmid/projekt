@@ -29,8 +29,8 @@ export const ShowPresenceButton = ({ data }) => {
       </Form>
 
       <Button className="btn btn-secondary" onClick={() => {
-        setPresenceTypeName(data.presenceType.name);
-        setInvitationTypeName(data.invitationType.name);
+        setPresenceTypeName(data.presenceType.name)
+        setInvitationTypeName(data.invitationType.name)
       }}>
         Update label
       </Button>
