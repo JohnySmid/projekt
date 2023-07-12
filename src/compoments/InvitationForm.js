@@ -11,12 +11,11 @@ import { EventInvitationTable } from './EventInvatationTable';
  * @function
  * @param {Object} props - The component props.
  * @param {Object} props.data - The event data.
- * @param {Object} props.fulldata - The full data.
  * @returns {JSX.Element} - The rendered invitation form component.
  */
 
 // Komponenta pro formulář pozvánky
-export const InvitationForm = ({ data, fulldata }) => {
+export const InvitationForm = ({ data }) => {
     // redux
     const dispatch = useDispatch();
     const [GroupTypeSetter, setGroupTypeSetter] = useState([]); // Stav pro uložení typů skupin

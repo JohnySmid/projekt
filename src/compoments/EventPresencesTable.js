@@ -4,7 +4,7 @@
 /**
  * A component that displays a table of presences for an event.
  * @function
- * @param {Array} data - The data containing presences information.
+ * @param {Array} data - The data containing events information.
  * @returns {JSX.Element} - The rendered table component.
  */
 

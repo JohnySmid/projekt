@@ -10,28 +10,29 @@ import { Pie } from 'react-chartjs-2';
  * @returns {JSX.Element|null} - The rendered pie chart component or null if the date is outside the event range.
  */
 
-// Slovník typů přítomnosti a jejich popisků a barev
-const presenceTypeDictionary = {
-  'Přítomen': {
-    label: 'Přítomen',
-    color: '#1af203', // Zelená
-  },
-  'Neomluven': {
-    label: 'Neomluven',
-    color: '#ff1748', // Červená
-  },
-  'Dovolená': {
-    label: 'Dovolená',
-    color: '#e5f900', // Žlutá
-  },
-  'Neuvedeno': {
-    label: 'Neuvedeno',
-    color: '#eb8109', // Oranžová (pro ostatní typy)
-  },
-};
+
 
 export const MyPieChart = ({ data, event }) => {
-    
+      // Slovník typů přítomnosti a jejich popisků a barev
+  const presenceTypeDictionary = {
+    'Přítomen': {
+      label: 'Přítomen',
+      color: '#1af203', // Zelená
+    },
+    'Neomluven': {
+      label: 'Neomluven',
+      color: '#ff1748', // Červená
+    },
+    'Dovolená': {
+      label: 'Dovolená',
+      color: '#e5f900', // Žlutá
+    },
+    'Neuvedeno': {
+      label: 'Neuvedeno',
+      color: '#eb8109', // Oranžová (pro ostatní typy)
+    },
+  }
+  
   const chosedate = "2023-04-19T08:00:00";
   const date = new Date(chosedate); // new Date() → aktuální datum
   const Enddate = new Date(event.enddate)

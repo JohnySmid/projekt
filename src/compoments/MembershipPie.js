@@ -30,7 +30,7 @@ export const MembershipPieChart = ({ groupId, data }) => {
       label: 'Neuvedeno',
       color: '#eb8109', // Oranžová (pro ostatní typy)
     },
-  };
+  }
   
   // Filtruje události patřící do dané skupiny
     const groupEvents = data.filter(event =>
