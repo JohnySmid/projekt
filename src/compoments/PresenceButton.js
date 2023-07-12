@@ -19,23 +19,23 @@ export const PresenceButton = ({btnname, presenceId, lastchange, presenceTypeId,
         const dispatch = useDispatch();
 
         // button colors :)
-        let buttonClassName = "btn btn-secondary";
+        let buttonClassName = "btn btn-secondary"
         if (btnname === "Přítomen") {
-            buttonClassName = "btn btn-success";
+            buttonClassName = "btn btn-success"
         } else if (btnname === "Neomluven") {
-            buttonClassName = "btn btn-danger";
+            buttonClassName = "btn btn-danger"
         } else if (btnname === "Dovolená") {
-            buttonClassName = "btn btn-warning";
+            buttonClassName = "btn btn-warning"
         }
 
-            return (
-                <Button className={buttonClassName} onClick=
-                {() => {
-                            dispatch(PresenceMutationLoader({presenceId: presenceId, 
-                                                            lastchange: lastchange, 
-                                                            presenceTypeId: presenceTypeId, 
-                                                            invitationTypeId: invitationTypeId}));
-                        }
-                }>{btnname}</Button>
-            );
+        return (
+            <Button className={buttonClassName} onClick=
+            {() => {
+                        dispatch(PresenceMutationLoader({presenceId: presenceId, 
+                                                        lastchange: lastchange, 
+                                                        presenceTypeId: presenceTypeId, 
+                                                        invitationTypeId: invitationTypeId}))
+                    }
+            }>{btnname}</Button>
+        );
 };

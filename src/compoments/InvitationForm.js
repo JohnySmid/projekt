@@ -17,8 +17,8 @@ import { EventInvitationTable } from './EventInvatationTable';
 // Komponenta pro formulář pozvánky
 export const InvitationForm = ({ data }) => {
     // redux
-    const dispatch = useDispatch();
-    const [GroupTypeSetter, setGroupTypeSetter] = useState([]); // Stav pro uložení typů skupin
+    const dispatch = useDispatch()
+    const [GroupTypeSetter, setGroupTypeSetter] = useState([]) // Stav pro uložení typů skupin
 
     // Funkce pro získání typů skupin z databáze pomocí asynchronního volání
     const groupTypeFetch = () => (dispatch, getState) => {
@@ -26,19 +26,19 @@ export const InvitationForm = ({ data }) => {
         .then(response => response.json())
         .then(json => {
           // Extrahujte data z groupPage, ? => pokud existují data, jinak nevytvoří chybu
-          const GroupTypeSetter = json.data?.groupPage;
+          const GroupTypeSetter = json.data?.groupPage
           if (GroupTypeSetter) {
-            setGroupTypeSetter(GroupTypeSetter);
+            setGroupTypeSetter(GroupTypeSetter)
           } else {
-            console.log("Error ocurred in groupTypeFetch function for fetching data from database: \n", console.error());
+            console.log("Error ocurred in groupTypeFetch function for fetching data from database: \n", console.error())
           }
-          return json;
-        });
-    };
+          return json
+        })
+    }
 
     useEffect(() => {
-      dispatch(groupTypeFetch()); // Získání typů skupin po načtení komponenty
-    }, []);
+      dispatch(groupTypeFetch()) // Získání typů skupin po načtení komponenty
+    }, [])
 
     // // Strukturování uživatelů na základě přítomnosti
     // const structureUsers = data.presences.map((presence) => {
@@ -79,7 +79,7 @@ export const InvitationForm = ({ data }) => {
                 if (type.name) {
                   return <option key={type.id} value={type.id}>{type.name}</option>;
                 }
-                return null;
+                return null
               })}
             </Form.Select>
             {/* Zobrazení tlačítka pro pozvání skupiny, pokud je vybrána skupina */}
