@@ -4,6 +4,8 @@ import { InvitationForm } from '../compoments/InvitationForm';
 import Card from "react-bootstrap/Card";
 import { Button } from 'react-bootstrap';
 
+import React from 'react';
+
 /**
  * componentonent for the second page of the application.
  * Renders an invitation form.

@@ -1,5 +1,7 @@
- import { UserPresenceModal } from './UserPresenceModal';
+import { UserPresenceModal } from './UserPresenceModal';
 
+
+import React from 'react';
 
 /**
  * A component that displays a table of presences for an event.

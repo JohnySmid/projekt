@@ -1,6 +1,7 @@
 import 'chart.js/auto';
 import { Pie } from 'react-chartjs-2';
 
+import React from 'react';
 
 /**
  * A component that displays a pie chart showing the presence distribution for a specific date.

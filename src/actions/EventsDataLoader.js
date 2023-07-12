@@ -3,6 +3,8 @@ import { loadData } from '../reducers/EventsSlicer';
 import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 
+import React from 'react';
+
 
 /**
  * Function that stores fetch function that loads events data.
@@ -31,8 +33,9 @@ export const EventsDataLoader = () => {
          } else {
            console.log("Error occurred in fetchData function for fetching data from the database. ", json)
          }
+
          setIsDataLoaded(true)
-          return json
+         return json
        })
        .catch(error => {
          console.error("Error occurred in fetchData function:", error)

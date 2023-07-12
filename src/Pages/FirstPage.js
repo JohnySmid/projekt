@@ -8,9 +8,11 @@ import { MyPieChart } from '../compoments/EventsPie';
 import { UserPieChart } from '../compoments/UserPie';
 import { MembershipPieChart } from '../compoments/MembershipPie';
 
+import React from 'react';
+
 /**
  * The first page compomentsonentonent of the application.
- ** @param {Object} props - The component props.
+ * @param {Object} props - The component props.
  * @param {function} props.goToSecondPage - Function to navigate to the second page.
  * @param {Object} props.event - The selected event object.
  * @param {Array} props.events - All events data.

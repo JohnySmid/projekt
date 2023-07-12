@@ -9,6 +9,8 @@ import { useState } from 'react';
 import { FirstPage } from './FirstPage';
 import { SecondPage } from './SecondPage';
 
+import React from 'react';
+
 
 /**
  * Front page componentonent of the application.

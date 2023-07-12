@@ -1,6 +1,8 @@
 import { InviteUserButton } from "./InviteUserButton";
 import { useSelector } from "react-redux";
 
+import React from 'react';
+
 /**
  * A component that displays a table of event invitations.
  * @function

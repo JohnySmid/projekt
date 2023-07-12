@@ -2,6 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { changeEvent } from "../reducers/EventSlice";
 
+import React from 'react';
+
 /**
  * A component that displays a selector for choosing an event.
  * @function
