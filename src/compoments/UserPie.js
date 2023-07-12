@@ -11,23 +11,26 @@ import { Pie } from 'react-chartjs-2';
  */
 
 // Slovník typů přítomnosti a jejich popisků a barev
-const presenceTypeDictionary = {
-  'Přítomen': {
-    label: 'Přítomen',
-    color: '#1af203', // Zelená
-  },
-  'Neomluven': {
-    label: 'Neomluven',
-    color: '#ff1748', // Červená
-  },
-  'Dovolená': {
-    label: 'Dovolená',
-    color: '#e5f900', // Žlutá
-  },
-}
+
 
 
 export const UserPieChart = ({ userId, data }) => {
+
+  const presenceTypeDictionary = {
+    'Přítomen': {
+      label: 'Přítomen',
+      color: '#1af203', // Zelená
+    },
+    'Neomluven': {
+      label: 'Neomluven',
+      color: '#ff1748', // Červená
+    },
+    'Dovolená': {
+      label: 'Dovolená',
+      color: '#e5f900', // Žlutá
+    },
+  }
+
   // Extrahuje typy přítomnosti a počítá jejich výskyty
   const userEvents = data.filter(event => event.presences.find(presence => presence.user.id === userId) !== undefined)
   
