@@ -5,9 +5,8 @@ import { Pie } from 'react-chartjs-2';
 /**
  * A component that displays a pie chart showing the presence distribution for a specific date.
  * @function
- * @param {Object} props - The component props.
- * @param {Array} props.data - The data containing events presence information.
- * @param {Array} props.event - The event object containing start and end dates.
+ * @param {Object} data - The data containing presence information.
+ * @param {Object} event - The event object containing start and end dates.
  * @returns {JSX.Element|null} - The rendered pie chart component or null if the date is outside the event range.
  */
 
@@ -28,18 +27,14 @@ export const MyPieChart = ({ data, event }) => {
       label: 'Dovolená',
       color: '#e5f900', // Žlutá
     },
-    'Neuvedeno': {
-      label: 'Neuvedeno',
-      color: '#eb8109', // Oranžová (pro ostatní typy)
-    },
   }
-
-  const chosedate = "2023-04-19T08:00:00";
+   
+  const chosedate = "2023-04-19T08:00:00"
   const date = new Date(chosedate); // new Date() → aktuální datum
   const Enddate = new Date(event.enddate)
   const Startdate = new Date(event.startdate)
 
-  let valid = false;
+  let valid = false
   if (date <= Enddate && date >= Startdate) {
     valid = true
   }
@@ -54,14 +49,16 @@ export const MyPieChart = ({ data, event }) => {
   // Připravuje objekt dat pro koláčový graf
   const chartData = {
     labels: Object.keys(presenceCounts).map(presenceType => {
-      const { label } = presenceTypeDictionary[presenceType];
-      return `${label}`;
+      const presenceTypeInfo = presenceTypeDictionary[presenceType]
+      const label = presenceTypeInfo ? presenceTypeInfo.label : "Neuvedeno"
+      return label
     }),
     datasets: [
       {
         data: Object.values(presenceCounts),
         backgroundColor: Object.keys(presenceCounts).map(presenceType => {
-          return presenceTypeDictionary[presenceType].color;
+          const presenceTypeInfo = presenceTypeDictionary[presenceType]
+          return presenceTypeInfo ? presenceTypeInfo.color : "#eb8109"
         }),
       },
     ],
@@ -76,10 +73,10 @@ export const MyPieChart = ({ data, event }) => {
           {date.toLocaleString()}
         </div>
       </>
-    );
+    )
    }
    else{
     // Pokud zvolené datum není v rozmezí události, nezobrazuje se nic
     return null
    }
-  };
+  }

@@ -10,10 +10,9 @@ import { MembershipPieChart } from '../compoments/MembershipPie';
 
 /**
  * The first page compomentsonentonent of the application.
- * @param {Object} props - The component props.
- * @param {function} props.goToSecondPage - Function to navigate to the second page.
- * @param {Object} props.event - The selected event object.
- * @param {Array} props.events - All events data.
+ * @param {function} goToSecondPage - Function to navigate to the second page.
+ * @param {Object} event - The selected event object.
+ * @param {Array} events - All events data.
  * @returns {JSX.Element} - The rendered first page compomentsonentonent.
  */
 

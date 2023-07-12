@@ -4,8 +4,7 @@ import { useSelector } from "react-redux";
 /**
  * A component that displays a table of event invitations.
  * @function
- * @param {Object} props - The component props.
- * @param {Array} props.data - The data containing events information.
+ * @param {Array} data - The data containing events information.
  * @returns {JSX.Element} - The rendered table component.
  */
 

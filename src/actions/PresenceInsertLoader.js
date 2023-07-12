@@ -5,11 +5,10 @@ import { addPresence } from "../reducers/EventsSlicer";
  * Presence Insert Function
  * Inserts presence data into the database and updates the Redux store with the new presence.
  * @function
- * @param {Object} props - The component props.
- * @param {string} props.event_id - The ID of the event.
- * @param {string} props.user_id - The ID of the user.
- * @param {string} props.invitation_id - The ID of the invitation.
- * @param {string} props.presencetype_id - The ID of the presence type.
+ * @param {string} event_id - The ID of the event.
+ * @param {string} user_id - The ID of the user.
+ * @param {string} invitation_id - The ID of the invitation.
+ * @param {string} presencetype_id - The ID of the presence type.
  * @returns {Function} The presence insert loader function.
  */
 
@@ -28,6 +27,6 @@ export const PresenceInsertLoader = ({event_id, user_id, invitation_id, presence
         return json
         })
         .catch(error => {
-            console.log('Error occurred in PresenceInsertLoader:', error)
+            console.log('Error occurred in PresenceInsertLoader:', error);
           })
 )
