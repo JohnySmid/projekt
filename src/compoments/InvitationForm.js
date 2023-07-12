@@ -10,7 +10,7 @@ import { EventInvitationTable } from './EventInvatationTable';
  * A component that displays an invitation form for selecting and inviting users and groups to an event.
  * @function
  * @param {Object} props - The component props.
- * @param {Object} props.data - The event data.
+ * @param {Array} props.data - The events data.
  * @returns {JSX.Element} - The rendered invitation form component.
  */
 
@@ -40,14 +40,14 @@ export const InvitationForm = ({ data }) => {
       dispatch(groupTypeFetch()); // Získání typů skupin po načtení komponenty
     }, []);
 
-    // Strukturování uživatelů na základě přítomnosti
-    const structureUsers = data.presences.map((presence) => {
-      //console.log(presence.user.name);
-      if (presence.id) {
-        return { userId: presence.user.id, userName: presence.user.name };
-      }
-      return null;
-    });
+    // // Strukturování uživatelů na základě přítomnosti
+    // const structureUsers = data.presences.map((presence) => {
+    //   //console.log(presence.user.name);
+    //   if (presence.id) {
+    //     return { userId: presence.user.id, userName: presence.user.name };
+    //   }
+    //   return null;
+    // });
 
     const [selectedOption, setSelectedOption] = useState('Choose group'); // Stav pro vybranou možnost výběru skupiny
     const [selectedGroupId, setselectedGroupId] = useState(''); // Stav pro vybrané ID skupiny

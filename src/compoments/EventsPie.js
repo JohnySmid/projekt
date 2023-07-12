@@ -5,8 +5,9 @@ import { Pie } from 'react-chartjs-2';
 /**
  * A component that displays a pie chart showing the presence distribution for a specific date.
  * @function
- * @param {Object} data - The data containing presence information.
- * @param {Object} event - The event object containing start and end dates.
+ * @param {Object} props - The component props.
+ * @param {Array} props.data - The data containing events presence information.
+ * @param {Array} props.event - The event object containing start and end dates.
  * @returns {JSX.Element|null} - The rendered pie chart component or null if the date is outside the event range.
  */
 
@@ -32,7 +33,7 @@ export const MyPieChart = ({ data, event }) => {
       color: '#eb8109', // Oranžová (pro ostatní typy)
     },
   }
-  
+
   const chosedate = "2023-04-19T08:00:00";
   const date = new Date(chosedate); // new Date() → aktuální datum
   const Enddate = new Date(event.enddate)
