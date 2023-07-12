@@ -9,12 +9,13 @@ import { useState, useEffect } from 'react';
  *  @function
  */
 
-export const EventsLoader = () => {
+export const EventsDataLoader = () => {
   const dispatch = useDispatch();
   const [isDataLoaded, setIsDataLoaded] = useState(false);
 
    /**
    * Fetches events data from the server and dispatches it to the store.
+   * @function
    * @param {Function} dispatch - The dispatch function provided by react-redux.
    * @param {Function} getState - The getState function provided by react-redux.
    * @returns {Promise} A Promise that resolves to the JSON response from the server.
@@ -44,13 +45,7 @@ export const EventsLoader = () => {
 
   return (
     <>
-      <button
-        className="btn btn-sm btn-success my-1"
-        onClick={fetchData}
-        disabled={isDataLoaded}
-      >
-        {isDataLoaded ? 'Data Loaded' : 'Load Data'}
-      </button>
+      {isDataLoaded ? <p>Data loaded.</p> : <p>Loading data...</p>}
     </>
   );
 }

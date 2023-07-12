@@ -29,6 +29,6 @@ export const PresenceMutationLoader = ({presenceId, lastchange, presenceTypeId, 
         return json
       })
       .catch(error => {
-        console.log('Error occurred in PresenceMutationLoader:', error);
+        console.log('Error occurred in PresenceMutationLoader:', error)
       })
 )

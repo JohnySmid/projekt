@@ -28,6 +28,6 @@ export const PresenceInsertLoader = ({event_id, user_id, invitation_id, presence
         return json
         })
         .catch(error => {
-            console.log('Error occurred in PresenceInsertLoader:', error);
+            console.log('Error occurred in PresenceInsertLoader:', error)
           })
 )
