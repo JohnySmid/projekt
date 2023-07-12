@@ -26,6 +26,7 @@ const presenceTypeDictionary = {
   },
 }
 
+
 export const UserPieChart = ({ userId, data }) => {
   // Extrahuje typy přítomnosti a počítá jejich výskyty
   const userEvents = data.filter(event => event.presences.find(presence => presence.user.id === userId) !== undefined)

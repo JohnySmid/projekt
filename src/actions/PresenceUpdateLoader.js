@@ -5,10 +5,11 @@ import { updateData } from '../reducers/EventsSlicer';
  * Presence Update Function
  * Update presence data into the database and updates the Redux store with the modify presence.
  * @function
- * @param {string} presenceId - The ID of the presence.
- * @param {string} lastchange - The last change timestamp.
- * @param {string} presenceTypeId - The ID of the presence type.
- * @param {string} invitationTypeId - The ID of the invitation type.
+ * @param {Object} props - The component props.
+ * @param {string} props.presenceId - The ID of the presence.
+ * @param {string} props.lastchange - The last change timestamp.
+ * @param {string} props.presenceTypeId - The ID of the presence type.
+ * @param {string} props.invitationTypeId - The ID of the invitation type.
  * @returns {Function} The presence update loader function.
  */
 
@@ -28,6 +29,6 @@ export const PresenceMutationLoader = ({presenceId, lastchange, presenceTypeId, 
         return json
       })
       .catch(error => {
-        console.log('Error occurred in PresenceMutationLoader:', error);
+        console.log('Error occurred in PresenceMutationLoader:', error)
       })
 )

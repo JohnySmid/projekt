@@ -14,6 +14,7 @@ import { PresenceInsertLoader } from "../actions/PresenceInsertLoader";
  * @returns {JSX.Element} - The rendered button component.
  */
 
+
 export const InviteGroupButton = ({ eventId, groupId }) => {
     const dispatch = useDispatch();
 

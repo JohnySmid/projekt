@@ -15,6 +15,7 @@ import { useDispatch } from 'react-redux';
  * @returns {JSX.Element} - The rendered button component.
  */
 
+
 export const PresenceButton = ({btnname, presenceId, lastchange, presenceTypeId, invitationTypeId}) => {
         const dispatch = useDispatch();
 

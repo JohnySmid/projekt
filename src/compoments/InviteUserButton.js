@@ -12,6 +12,7 @@ import { PresenceInsertLoader } from "../actions/PresenceInsertLoader";
  * @returns {JSX.Element} - The rendered button component.
  */
 
+
 // uvest hpdnoty jako param
 export const InviteUserButton = ({ eventId, userId }) => {
     const dispatch = useDispatch();

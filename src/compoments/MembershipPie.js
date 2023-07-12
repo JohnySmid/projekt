@@ -11,6 +11,7 @@ import { Pie } from 'react-chartjs-2';
  */
 
 
+
 export const MembershipPieChart = ({ groupId, data }) => {
   // Slovník typů přítomnosti a jejich popisků a barev
   const presenceTypeDictionary = {

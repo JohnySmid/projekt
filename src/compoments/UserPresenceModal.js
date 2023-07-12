@@ -47,6 +47,7 @@ export const UserPresenceModal = ({data}) => {
         })
     )
     
+    
     // Fetching InvatationType
     const invatationTypeFetch = () => (dispatch, getState) => (
       // Call the ProjectsQuery function to fetch projects

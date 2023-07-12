@@ -8,8 +8,9 @@ import { Button } from 'react-bootstrap';
  * componentonent for the second page of the application.
  * Renders an invitation form.
  *
- * @param {Function} goToFirstPage - Function to navigate back to the first page.
- * @param {Object} event - Event data.
+ * @param {Object} props - The component props.
+ * @param {Function} props.goToFirstPage - Function to navigate back to the first page.
+ * @param {Object} props.event - Event data.
  * @returns {JSX.Element} Second page componentonent JSX.
  */
 

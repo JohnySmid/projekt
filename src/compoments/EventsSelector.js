@@ -8,6 +8,7 @@ import { changeEvent } from "../reducers/EventSlice";
  * @returns {JSX.Element} - The rendered event selector component.
  */
 
+
 // Komponenta pro výběr události
 export const EventsSelector = () => {
     // Získání dat o událostech ze stavu Redux pomocí hooku 'useSelector'

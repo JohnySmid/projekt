@@ -1,4 +1,4 @@
-import  { EventsLoader } from '../actions/EventsDataLoader';
+import { EventsDataLoader } from '../actions/EventsDataLoader';
 import { EventsSelector } from '../compoments/EventsSelector';
  
 import { useSelector } from 'react-redux';
@@ -43,15 +43,14 @@ export const FrontPage = () => {
             ) : null
           }
         </div>
-      );
+      )
     } else {
-      console.log('Event data not found...')
       return (
         <div className="container">
           <Card>
             <Card.Title>Events</Card.Title>
             <Card.Body>
-              <EventsLoader />
+              <EventsDataLoader />
               <EventsSelector />
             </Card.Body>
           </Card>
