@@ -8,6 +8,7 @@ import { EventInvitationTable } from './EventInvatationTable';
 
 /**
  * A component that displays an invitation form for selecting and inviting users and groups to an event.
+ * @function
  * @param {Object} props - The component props.
  * @param {Object} props.data - The event data.
  * @param {Object} props.fulldata - The full data.

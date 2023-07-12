@@ -4,6 +4,7 @@ import { Pie } from 'react-chartjs-2';
 
 /**
  * A component that displays a pie chart showing the presence distribution for a specific date.
+ * @function
  * @param {Object} data - The data containing presence information.
  * @param {Object} event - The event object containing start and end dates.
  * @returns {JSX.Element|null} - The rendered pie chart component or null if the date is outside the event range.

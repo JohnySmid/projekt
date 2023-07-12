@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 
 /**
  * A component that displays a presence button.
+ * @function
  * @param {Object} props - The component props.
  * @param {string} props.btnname - The name of the button.
  * @param {string} props.presenceId - The presence ID.

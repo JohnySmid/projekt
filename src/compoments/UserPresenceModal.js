@@ -10,8 +10,9 @@ import { ShowPresenceButton } from './ShowPresenceButton';
 
 /**
  * A component that displays a modal for user presence.
+ * @function
  * @param {Object} props - The component props.
- * @param {Array} props.data - An array of presence data.
+ * @param {Array} props.data - An array of events data.
  * @returns {JSX.Element} - The rendered modal component.
  */
 

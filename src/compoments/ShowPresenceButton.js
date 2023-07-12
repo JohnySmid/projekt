@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 
 /**
  * A component that displays a updated presenceType and InvitationType in labels using update button.
+ * @function
  * @param {Object} data - Data object containing presence and invitation type information.
  * @param {Object} data.presenceType - Presence type object.
  * @param {string} data.presenceType.name - Name of the presence type.

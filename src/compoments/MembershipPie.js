@@ -3,6 +3,7 @@ import { Pie } from 'react-chartjs-2';
 
 /**
  * A component that displays a pie chart for membership presence types.
+ * @function
  * @param {Object} props - The component props.
  * @param {string} props.groupId - The ID of the group.
  * @param {Array} props.data - The data for the pie chart.
@@ -10,28 +11,26 @@ import { Pie } from 'react-chartjs-2';
  */
 
 
-// Slovník typů přítomnosti a jejich popisků a barev
-const presenceTypeDictionary = {
-  'Přítomen': {
-    label: 'Přítomen',
-    color: '#1af203', // Zelená
-  },
-  'Neomluven': {
-    label: 'Neomluven',
-    color: '#ff1748', // Červená
-  },
-  'Dovolená': {
-    label: 'Dovolená',
-    color: '#e5f900', // Žlutá
-  },
-  'Neuvedeno': {
-    label: 'Neuvedeno',
-    color: '#eb8109', // Oranžová (pro ostatní typy)
-  },
-};
-
-
 export const MembershipPieChart = ({ groupId, data }) => {
+  // Slovník typů přítomnosti a jejich popisků a barev
+  const presenceTypeDictionary = {
+    'Přítomen': {
+      label: 'Přítomen',
+      color: '#1af203', // Zelená
+    },
+    'Neomluven': {
+      label: 'Neomluven',
+      color: '#ff1748', // Červená
+    },
+    'Dovolená': {
+      label: 'Dovolená',
+      color: '#e5f900', // Žlutá
+    },
+    'Neuvedeno': {
+      label: 'Neuvedeno',
+      color: '#eb8109', // Oranžová (pro ostatní typy)
+    },
+  };
   
   // Filtruje události patřící do dané skupiny
     const groupEvents = data.filter(event =>
@@ -68,9 +67,9 @@ export const MembershipPieChart = ({ groupId, data }) => {
       currentEvent.presences.forEach(presence => {
         if (presence.user.membership[0].group.id === groupId) {
           const presenceType = presence.presenceType.name
-          counts[presenceType] = (counts[presenceType] || 0) + 1;
+          counts[presenceType] = (counts[presenceType] || 0) + 1
         }
-      });
+      })
       return counts;
     }, {})
     console.log(presenceCounts)
@@ -78,15 +77,15 @@ export const MembershipPieChart = ({ groupId, data }) => {
     // Připraví data pro koláčový graf
     const chartData = {
       labels: Object.keys(presenceCounts).map(presenceType => {
-        const { label } = presenceTypeDictionary[presenceType];
-        const group = groupEvents[0].presences.find(presence => presence.user.membership[0].group.id === groupId).user.membership[0].group.name;
-        return `${label} - ${group}`;
+        const { label } = presenceTypeDictionary[presenceType]
+        const group = groupEvents[0].presences.find(presence => presence.user.membership[0].group.id === groupId).user.membership[0].group.name
+        return `${label} - ${group}`
       }),
       datasets: [
         {
           data: Object.values(presenceCounts),
           backgroundColor: Object.keys(presenceCounts).map(presenceType => {
-            return presenceTypeDictionary[presenceType].color;
+            return presenceTypeDictionary[presenceType].color
           }),
         },
       ],

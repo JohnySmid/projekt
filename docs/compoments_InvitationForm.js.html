@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: compoments/InvitationForm.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: compoments/InvitationForm.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useState, useEffect } from 'react';
+import { Form } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { GroupsQuery } from '../queries/GroupsQuery';
+import { EventsSelector } from './EventsSelector';
+import { InviteGroupButton } from './InviteGroupButton';
+import { EventInvitationTable } from './EventInvatationTable';
+
+/**
+ * A component that displays an invitation form for selecting and inviting users and groups to an event.
+ * @function
+ * @param {Object} props - The component props.
+ * @param {Object} props.data - The event data.
+ * @param {Object} props.fulldata - The full data.
+ * @returns {JSX.Element} - The rendered invitation form component.
+ */
+
+// Komponenta pro formulář pozvánky
+export const InvitationForm = ({ data, fulldata }) => {
+    // redux
+    const dispatch = useDispatch();
+    const [GroupTypeSetter, setGroupTypeSetter] = useState([]); // Stav pro uložení typů skupin
+
+    // Funkce pro získání typů skupin z databáze pomocí asynchronního volání
+    const groupTypeFetch = () => (dispatch, getState) => {
+      GroupsQuery()
+        .then(response => response.json())
+        .then(json => {
+          // Extrahujte data z groupPage, ? => pokud existují data, jinak nevytvoří chybu
+          const GroupTypeSetter = json.data?.groupPage;
+          if (GroupTypeSetter) {
+            setGroupTypeSetter(GroupTypeSetter);
+          } else {
+            console.log("Error ocurred in groupTypeFetch function for fetching data from database: \n", console.error());
+          }
+          return json;
+        });
+    };
+
+    useEffect(() => {
+      dispatch(groupTypeFetch()); // Získání typů skupin po načtení komponenty
+    }, []);
+
+    // Strukturování uživatelů na základě přítomnosti
+    const structureUsers = data.presences.map((presence) => {
+      //console.log(presence.user.name);
+      if (presence.id) {
+        return { userId: presence.user.id, userName: presence.user.name };
+      }
+      return null;
+    });
+
+    const [selectedOption, setSelectedOption] = useState('Choose group'); // Stav pro vybranou možnost výběru skupiny
+    const [selectedGroupId, setselectedGroupId] = useState(''); // Stav pro vybrané ID skupiny
+
+    // Funkce pro zachycení změny výběru skupiny
+    const handleOptionChange = (e) => {
+      setSelectedOption(e.target.value);
+      setselectedGroupId(e.target.value);
+    };
+
+    return (
+      &lt;Form>
+        &lt;div>
+          &lt;Form.Label style={{ fontSize: '20px' }}>Event&lt;/Form.Label>
+          &lt;EventsSelector />
+          &lt;br />
+          &lt;Form.Group>
+            &lt;Form.Label style={{ fontSize: '20px' }}>Invite specific user&lt;/Form.Label>
+            &lt;br />
+            &lt;EventInvitationTable key={data.id} data={data.presences} />
+          &lt;/Form.Group>
+          &lt;br />&lt;br />
+          &lt;Form.Group>
+            &lt;Form.Label style={{ fontSize: '20px' }}>Invite Group&lt;/Form.Label>
+            &lt;Form.Select value={selectedOption} onChange={handleOptionChange}>
+              &lt;option>Choose group&lt;/option>
+              {/* Procházení typů skupin a vytvoření možností ve výběrovém poli */}
+              {GroupTypeSetter.map((type) => {
+                if (type.name) {
+                  return &lt;option key={type.id} value={type.id}>{type.name}&lt;/option>;
+                }
+                return null;
+              })}
+            &lt;/Form.Select>
+            {/* Zobrazení tlačítka pro pozvání skupiny, pokud je vybrána skupina */}
+            {selectedGroupId !== '' ? &lt;InviteGroupButton eventId={data.id} groupId={selectedGroupId} /> : null}
+          &lt;/Form.Group>
+        &lt;/div>
+      &lt;/Form>
+    );
+};</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#AuthorizedFetch">AuthorizedFetch</a></li><li><a href="global.html#EventInvitationRow">EventInvitationRow</a></li><li><a href="global.html#EventInvitationTable">EventInvitationTable</a></li><li><a href="global.html#EventPresenceRow">EventPresenceRow</a></li><li><a href="global.html#EventPresencesTable">EventPresencesTable</a></li><li><a href="global.html#EventSlice">EventSlice</a></li><li><a href="global.html#EventsLoader">EventsLoader</a></li><li><a href="global.html#EventsQuery">EventsQuery</a></li><li><a href="global.html#EventsQueryJSON">EventsQueryJSON</a></li><li><a href="global.html#EventsSelector">EventsSelector</a></li><li><a href="global.html#EventsSlicer">EventsSlicer</a></li><li><a href="global.html#EventsTypePageJSON">EventsTypePageJSON</a></li><li><a href="global.html#EventsTypePageQuery">EventsTypePageQuery</a></li><li><a href="global.html#FirstPage">FirstPage</a></li><li><a href="global.html#FrontPage">FrontPage</a></li><li><a href="global.html#GroupByIdJSON">GroupByIdJSON</a></li><li><a href="global.html#GroupByIdQuery">GroupByIdQuery</a></li><li><a href="global.html#GroupsQuery">GroupsQuery</a></li><li><a href="global.html#GroupsQueryJSON">GroupsQueryJSON</a></li><li><a href="global.html#InvatationType">InvatationType</a></li><li><a href="global.html#InvatationTypeJSON">InvatationTypeJSON</a></li><li><a href="global.html#InvitationForm">InvitationForm</a></li><li><a href="global.html#InviteGroupButton">InviteGroupButton</a></li><li><a href="global.html#InviteUserButton">InviteUserButton</a></li><li><a href="global.html#MembershipPieChart">MembershipPieChart</a></li><li><a href="global.html#PresenceButton">PresenceButton</a></li><li><a href="global.html#PresenceInsert">PresenceInsert</a></li><li><a href="global.html#PresenceInsertJSON">PresenceInsertJSON</a></li><li><a href="global.html#PresenceInsertLoader">PresenceInsertLoader</a></li><li><a href="global.html#PresenceMutation">PresenceMutation</a></li><li><a href="global.html#PresenceMutationJSON">PresenceMutationJSON</a></li><li><a href="global.html#PresenceMutationLoader">PresenceMutationLoader</a></li><li><a href="global.html#PresenceType">PresenceType</a></li><li><a href="global.html#PresenceTypeJSON">PresenceTypeJSON</a></li><li><a href="global.html#SecondPage">SecondPage</a></li><li><a href="global.html#ShowPresenceButton">ShowPresenceButton</a></li><li><a href="global.html#Store">Store</a></li><li><a href="global.html#UserPresenceModal">UserPresenceModal</a></li><li><a href="global.html#presenceTypeDictionary">presenceTypeDictionary</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Wed Jul 12 2023 14:24:57 GMT+0200 (středoevropský letní čas)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

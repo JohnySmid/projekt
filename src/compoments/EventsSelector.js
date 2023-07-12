@@ -4,6 +4,7 @@ import { changeEvent } from "../reducers/EventSlice";
 
 /**
  * A component that displays a selector for choosing an event.
+ * @function
  * @returns {JSX.Element} - The rendered event selector component.
  */
 

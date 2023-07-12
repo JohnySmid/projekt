@@ -3,6 +3,7 @@ import { Pie } from 'react-chartjs-2';
 
 /**
  * A component that displays a pie chart representing presence data for a user.
+ * @function
  * @param {Object} props - The component props.
  * @param {string} props.userId - The ID of the user.
  * @param {Array} props.data - An array of events data.

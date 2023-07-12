@@ -7,6 +7,7 @@ import { PresenceInsertLoader } from "../actions/PresenceInsertLoader";
 
 /**
  * A component that displays buttons to download group members and invite them to an event.
+ * @function
  * @param {Object} props - The component props.
  * @param {string} props.eventId - The ID of the event.
  * @param {string} props.groupId - The ID of the group.
