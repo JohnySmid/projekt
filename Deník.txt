@@ -28,4 +28,6 @@
 1. 7. - Úprava query, přidání variables a smazání zbytečných souborů
 3. 7. - Přidání labels v modalu dodělávání jsdoc komentářů + přídán dictionary do grafů a drobné úpravy
 4. 7. - Nemám rád jsdoc, upravování a ujednotnění @param v komponent a queries, přidání @param do actions
+5-10.7. - Učení se na matiku, projekt stranou
 12. 7. - Pomocí příkazů jsem vygeneroval jsdoc (npx jsdoc -c .jsdoc.json) a založil si účet na npm
+13. 7. - mazání console.log vyzkoušení npm publish
