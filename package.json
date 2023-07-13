@@ -1,9 +1,12 @@
 {
-  "name": "projekt",
+  "name": "uo-presence-app",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "/ui",
   "proxy": "http://localhost:31180/",
+  "babel": {
+    "presets": ["@babel/preset-react"]
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",
@@ -28,7 +31,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "publish:npm": "babel src/components -d dist/components --copy-files && babel src/actions -d dist/actions --copy-files  && babel src/pages -d dist/pages --copy-files && babel src/queries -d dist/queries --copy-files && babel src/reducers -d dist/reducers --copy-files"
   },
   "eslintConfig": {
     "extends": [
@@ -47,5 +51,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/preset-react": "^7.0.0"
   }
 }
