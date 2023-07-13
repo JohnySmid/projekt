@@ -40,14 +40,6 @@ export const InvitationForm = ({ data }) => {
       dispatch(groupTypeFetch()) // Získání typů skupin po načtení komponenty
     }, [])
 
-    // // Strukturování uživatelů na základě přítomnosti
-    // const structureUsers = data.presences.map((presence) => {
-    //   //console.log(presence.user.name);
-    //   if (presence.id) {
-    //     return { userId: presence.user.id, userName: presence.user.name };
-    //   }
-    //   return null;
-    // });
 
     const [selectedOption, setSelectedOption] = useState('Choose group'); // Stav pro vybranou možnost výběru skupiny
     const [selectedGroupId, setselectedGroupId] = useState(''); // Stav pro vybrané ID skupiny
