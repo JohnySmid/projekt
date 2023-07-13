@@ -1,5 +1,5 @@
 import { EventsDataLoader } from '../actions/EventsDataLoader';
-import { EventsSelector } from '../compoments/EventsSelector';
+import { EventsSelector } from '../components/EventsSelector';
  
 import { useSelector } from 'react-redux';
 

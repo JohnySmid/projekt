@@ -1,5 +1,5 @@
 
-import { InvitationForm } from '../compoments/InvitationForm';
+import { InvitationForm } from '../components/InvitationForm';
 
 import Card from "react-bootstrap/Card";
 import { Button } from 'react-bootstrap';
