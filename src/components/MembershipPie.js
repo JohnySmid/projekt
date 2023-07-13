@@ -90,8 +90,9 @@ export const MembershipPieChart = ({ groupId, data }) => {
   
     return (
       <div style={{ width: '300px', height: '300px' }}>
+        <p>Skupina DEP presence</p>
         <Pie data={chartData} />
         {currentDate.toLocaleString()}
       </div>
-    )
-  }
+    );
+  };

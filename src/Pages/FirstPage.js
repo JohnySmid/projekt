@@ -38,19 +38,21 @@ export const FirstPage = ({ goToSecondPage, event, events }) => {
             <Card.Title>Pie graph presence</Card.Title>
             <Card.Body>
               <MyPieChart data={event.presences} event={event}/>
-              <br/>
+              <br />
+              <br />
               <br />
               <br />
               <UserPieChart key="89d1f4e4-ae0f-11ed-9bd8-0242ac110002" userId="89d1f4e4-ae0f-11ed-9bd8-0242ac110002"  data={events}/>
-              <br/>
+              <br />
+              <br />
               <br />
               <br />
               <MembershipPieChart key="2d9dd1c8-a4a2-11ed-b9df-0242ac120003" groupId="2d9dd1c8-a4a2-11ed-b9df-0242ac120003" data={events}/>
-              <br/>
+              <br />
+              <br />
               <br />
               <br />
             </Card.Body>
-
           </Card>
       </div>
     );

@@ -76,10 +76,10 @@ export const MyPieChart = ({ data, event }) => {
           {date.toLocaleString()}
         </div>
       </>
-    )
+    );
    }
    else{
     // Pokud zvolené datum není v rozmezí události, nezobrazuje se nic
     return null
    }
-  }
+  };

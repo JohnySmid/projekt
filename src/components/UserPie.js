@@ -89,8 +89,9 @@ export const UserPieChart = ({ userId, data }) => {
 
   return (
     <div style={{ width: '300px', height: '300px' }}>
+      <p>Ludmila presence</p>
       <Pie data={chartData} />
       {currentDate.toLocaleString()}
     </div>
-  )
-}
+  );
+};
