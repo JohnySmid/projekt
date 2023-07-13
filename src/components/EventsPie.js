@@ -71,6 +71,7 @@ export const MyPieChart = ({ data, event }) => {
     return (
       <>
         <div style={{ width: '300px', height: '300px' }}>
+          <p>Event presence</p>
           <Pie data={chartData} />
           {date.toLocaleString()}
         </div>

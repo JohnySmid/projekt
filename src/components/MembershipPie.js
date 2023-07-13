@@ -60,7 +60,6 @@ export const MembershipPieChart = ({ groupId, data }) => {
     // Extrahuje typy přítomnosti a počítá jejich výskyty pro konkrétní skupinu
     const presenceCounts = currentIndexes.reduce((counts, currentIndex) => {
       const currentEvent = groupEvents[currentIndex]
-      console.log(currentEvent)
       currentEvent.presences.forEach(presence => {
         if (presence.user.membership[0].group.id === groupId) {
           const presenceType = presence.presenceType.name

@@ -58,7 +58,6 @@ export const UserPieChart = ({ userId, data }) => {
   // Extrahuje typy přítomnosti a počítá jejich výskyty pro dané události a uživatele
   const presenceCounts = currentIndexes.reduce((counts, currentIndex) => {
     const currentEvent = userEvents[currentIndex]
-    console.log(currentEvent)
     currentEvent.presences.forEach(presence => {
       if (presence.user.id === userId) {
         const presenceType = presence.presenceType.name;
