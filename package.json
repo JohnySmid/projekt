@@ -1,11 +1,13 @@
 {
   "name": "uo-presence-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "homepage": "/ui",
   "proxy": "http://localhost:31180/",
   "babel": {
-    "presets": ["@babel/preset-react"]
+    "presets": [
+      "@babel/preset-react"
+    ]
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
