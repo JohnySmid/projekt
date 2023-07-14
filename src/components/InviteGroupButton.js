@@ -48,13 +48,11 @@ export const InviteGroupButton = ({ eventId, groupId }) => {
         <br />
         <Button className="btn btn-secondary" onClick={() => {
           // Kliknutí na tlačítko "stáhnout members"
-          console.log("eventID: ", eventId, "groupId: ", groupId)
           dispatch(groupMemebersFetch(groupId))
         }}>stáhnout members</Button>
         <Button className="btn btn-secondary" onClick={() => {
           // Kliknutí na tlačítko "pozvat"
           structureGroupMemberUserId.forEach((member) => {
-            console.log('user: ', member.userId)
             dispatch(PresenceInsertLoader({
               event_id: eventId,
               user_id: member.userId,

@@ -22,7 +22,6 @@ export const InviteUserButton = ({ eventId, userId }) => {
         <Button
             className="btn btn-secondary"
             onClick={() => {
-            console.log("eventID: ", eventId, "userId: ", userId);
             dispatch(
                 // Dispečer Redux akce s voláním PresenceInsertLoader
                 PresenceInsertLoader({event_id: eventId, user_id: userId,
